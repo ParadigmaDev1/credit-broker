@@ -2,6 +2,7 @@
   @include s(margin-top, -40);
   @include borr(40, 40, 0, 0);
   @include s(padding-top, 96);
+  @include s(padding-bottom, 96);
   background: var(--white-color);
   position: relative;
   z-index: 3;

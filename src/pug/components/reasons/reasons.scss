@@ -1,0 +1,71 @@
+.reasons {
+  position: relative;
+  z-index: 4;
+  @include s(padding-top, 96);
+  @include s(padding-bottom, 136);
+  @include borr(40, 40, 0, 0);
+  background-image: url("../img/reasons/bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  .reasons-inner {
+    h3 {
+      font-weight: 500;
+      @include s(font-size, 56);
+      @include s(letter-spacing, -1);
+      line-height: 96%;
+      color: var(--white-color);
+      span {
+        color: var(--purple-color);
+      }
+    }
+    .reasons-list {
+      @include s(margin-top, 48);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @include s(gap, 24);
+      .reason-item {
+        @include padding(48, 44);
+        @include borr(20);
+        background: rgba(128, 109, 249, 0.8);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include s(gap, 30);
+
+        .main-content {
+          flex: 1;
+          .title {
+            color: var(--white-color);
+            font-weight: 500;
+            @include s(font-size, 28);
+            line-height: 115%;
+          }
+          .descr {
+            color: var(--white-color);
+            font-weight: 500;
+            @include s(font-size, 20);
+            line-height: 128%;
+            @include s(margin-top, 16);
+          }
+        }
+        .step {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          p {
+            font-weight: 400;
+            @include s(font-size, 72);
+            line-height: 96%;
+            color: var(--white-color);
+          }
+          img {
+            @include s(width, 56);
+            @include s(height, 56);
+          }
+        }
+      }
+    }
+  }
+}
