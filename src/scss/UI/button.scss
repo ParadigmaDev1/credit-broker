@@ -40,4 +40,22 @@
     font-weight: 500;
     line-height: 106%;
   }
+  &.circle {
+    @include s(height, 56);
+    @include s(width, 56);
+    @include borr(16);
+    background: var(--txt-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 3px rgba(34, 60, 80, 0) inset;
+    svg {
+      @include s(height, 16);
+      @include s(width, 16);
+    }
+    &:hover {
+      background: var(--purple-color);
+      box-shadow: 0px 0px 10px 3px rgba(34, 60, 80, 0.21) inset;
+    }
+  }
 }

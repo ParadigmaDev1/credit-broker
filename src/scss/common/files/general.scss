@@ -79,3 +79,50 @@ body {
     }
   }
 }
+svg {
+  transition: var(--trs-cubic-300);
+
+  line,
+  rect,
+  circle,
+  path {
+    transition: var(--trs-cubic-600);
+  }
+}
+.navigation {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .btn {
+    pointer-events: all;
+    &.swiper-button-disabled {
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+  .btn.prev {
+    &:hover {
+      svg {
+        transform: translateX(-20%);
+      }
+    }
+    &:active {
+      svg {
+        transform: translateX(-45%);
+      }
+    }
+  }
+  .btn.next {
+    &:hover {
+      svg {
+        transform: translateX(20%);
+      }
+    }
+    &:active {
+      svg {
+        transform: translateX(45%);
+      }
+    }
+  }
+}
