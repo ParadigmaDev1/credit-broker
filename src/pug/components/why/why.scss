@@ -1,0 +1,172 @@
+.why {
+  @include s(margin-top, 96);
+  @include s(padding-bottom, 135);
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(233, 233, 255, 1) 100%
+    );
+    @include s(height, 248);
+  }
+  .why-inner {
+    position: relative;
+    z-index: 2;
+    h3 {
+      font-weight: 500;
+      @include s(font-size, 56);
+      @include s(letter-spacing, -1);
+      line-height: 96%;
+      span {
+        color: var(--purple-color);
+      }
+    }
+    .why-list-wrapper {
+      @include s(margin-top, 48);
+
+      .alert-list {
+        display: flex;
+        align-items: center;
+        @include s(gap, 24);
+        @include s(margin-left, 228);
+        .why-alert {
+          @include padding(48);
+          @include borr(20, 20, 20, 0);
+          @include s(width, 546);
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            @include s(bottom, -24);
+            left: 0;
+            border: calc(24 / var(--screensize) * 100vw) solid transparent;
+            border-left: calc(24 / var(--screensize) * 100vw) solid;
+            border-top: calc(24 / var(--screensize) * 100vw) solid;
+          }
+          &:first-child {
+            background: var(--txt-color);
+            &:before {
+              border-left-color: var(--txt-color);
+              border-top-color: var(--txt-color);
+            }
+          }
+          &:last-child {
+            background: var(--purple-color);
+            &:before {
+              border-left-color: var(--purple-color);
+              border-top-color: var(--purple-color);
+            }
+          }
+          .circles {
+            display: flex;
+            align-items: center;
+            @include s(gap, 2);
+
+            .circle {
+              @include s(width, 28);
+              @include s(height, 28);
+              border-radius: 999px;
+              background: rgba(255, 255, 255, 0.1);
+            }
+          }
+          .text {
+            @include s(margin-top, 24);
+            display: grid;
+            @include gtc(288, 1fr);
+            justify-content: space-between;
+            @include s(gap, 14);
+            .title {
+              font-weight: 500;
+              @include s(font-size, 36);
+              line-height: 106%;
+              color: var(--white-color);
+            }
+            .percent {
+              display: flex;
+              flex-direction: column;
+              @include s(gap, 6);
+              align-items: flex-end;
+              span {
+                color: rgba(255, 255, 255, 0.5);
+                text-transform: uppercase;
+                font-weight: 500;
+                @include s(font-size, 16);
+                line-height: 88%;
+              }
+              p {
+                color: var(--white-color);
+                font-weight: 500;
+                @include s(font-size, 56);
+                line-height: 88%;
+                @include s(letter-spacing, -4);
+              }
+            }
+          }
+        }
+      }
+      .list {
+        @include s(margin-top, 40);
+        display: flex;
+        flex-direction: column;
+        .row {
+          display: grid;
+          @include gtc(204, 1fr, 1fr);
+          @include s(gap, 24);
+          @include s(padding-bottom, 20);
+          @include s(padding-top, 20);
+          border-bottom: 1px solid var(--line-color);
+          &:first-child {
+            padding-top: 0;
+          }
+          &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+          .title {
+            color: var(--gray-light-color);
+            font-weight: 500;
+            @include s(font-size, 20);
+            line-height: 115%;
+          }
+          .why-item {
+            display: flex;
+            @include s(gap, 20);
+            @include s(padding-left, 48);
+            font-weight: 500;
+            @include s(font-size, 18);
+            line-height: 148%;
+            position: relative;
+
+            &.remove {
+              &:before {
+                background-image: url("../img/icons/remove-icon.svg");
+              }
+            }
+            &.check {
+              &:before {
+                background-image: url("../img/icons/check-circle.svg");
+              }
+            }
+            &:before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              @include s(width, 28);
+              @include s(height, 28);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+}
