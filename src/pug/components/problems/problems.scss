@@ -6,17 +6,19 @@
     rgba(233, 233, 255, 1) 100%
   );
   overflow: hidden;
-
+  position: relative;
+  z-index: 1;
   .problems-inner {
     position: relative;
 
-    @include s(padding-bottom, 96);
+    @include s(padding-bottom, 136);
 
     .image-block {
       position: absolute;
       bottom: 0;
       right: 0;
       @include s(right, 79);
+      @include s(bottom, 36);
       z-index: 2;
       & > img {
         z-index: 2;
@@ -24,7 +26,7 @@
       }
       .circles {
         position: absolute;
-        @include s(top, -58);
+        @include s(top, -18);
         @include s(bottom, 0);
         @include s(right, 0);
         @include s(left, -111);
