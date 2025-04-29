@@ -1,0 +1,43 @@
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--trs-cubic-300);
+  &.primary {
+    background: var(--txt-color);
+    @include borr(12);
+    height: 40px;
+    color: var(--white-color);
+    @include s(font-size, 16);
+    font-weight: 500;
+    line-height: 106%;
+    &:hover {
+      background: var(--purple-color);
+    }
+    &.dot {
+      position: relative;
+      @include padding(0, 35, 0, 60);
+      &::before {
+        content: "";
+        position: absolute;
+        background: var(--white-color);
+        border-radius: 999px;
+        @include s(width, 8);
+        @include s(height, 8);
+        @include s(left, 35);
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+  &.secondary {
+    background: var(--back-color);
+    @include borr(12);
+    height: 40px;
+    @include s(font-size, 16);
+    font-weight: 500;
+    line-height: 106%;
+  }
+}

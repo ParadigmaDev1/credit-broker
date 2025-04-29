@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  @include s(gap, 16);
+  align-items: center;
+  img {
+    @include s(width, 82);
+    @include s(height, 36);
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    @include s(gap, 1);
+    p {
+      &:last-child {
+        color: var(--purple-color);
+      }
+    }
+  }
+}
