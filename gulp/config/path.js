@@ -30,7 +30,7 @@ export const path = {
     images: `${srcFolder}/img/**/*.{jpg,jpeg,svg,png,gif,webp}`,
     scss: `${srcFolder}/**/*.scss`,
     html: `${srcFolder}/**/*.html`,
-    pug: `${srcFolder}/*.pug`,
+    pug: `${srcFolder}/**/*.pug`,
     files: `${srcFolder}/files/**/*.*`,
     php: `${srcFolder}/php/**/*.*`,
   },

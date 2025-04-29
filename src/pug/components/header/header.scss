@@ -1,6 +1,12 @@
 .header {
   @include s(padding-top, 14);
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white-color);
+  z-index: 100;
+  @include s(padding-bottom, 14);
   .header-inner {
     display: flex;
     flex-direction: column;
@@ -45,6 +51,12 @@
               @include s(height, 18);
             }
           }
+        }
+        .btn {
+          @include s(height, 40);
+          @include s(font-size, 16);
+          font-weight: 400;
+          line-height: 115%;
         }
         .tel {
           @include s(font-size, 18);

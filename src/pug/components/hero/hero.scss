@@ -1,0 +1,109 @@
+.hero {
+  @include s(margin-top, 140);
+  .hero-inner {
+    display: grid;
+    @include gtc(564, 1fr);
+    @include s(gap, 80);
+    .image-block {
+      @include borr(20);
+      overflow: hidden;
+      @include s(height, 536);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+    .text-block {
+      h1 {
+        font-weight: 500;
+        @include s(font-size, 64);
+        @include s(letter-spacing, -1);
+        line-height: 106%;
+        span {
+          color: var(--purple-color);
+        }
+      }
+      .row {
+        @include s(margin-top, 28);
+        display: grid;
+        @include gtc(214, 1fr);
+        @include s(gap, 47);
+        .image-wrapper {
+          @include borr(20);
+          //   overflow: hidden;
+          @include s(height, 372);
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include borr(20);
+          }
+          .coins {
+            img {
+              position: absolute;
+              &:nth-child(1) {
+                @include s(width, 86);
+                @include s(height, 89);
+                @include s(top, 37);
+                @include s(left, 24);
+              }
+              &:nth-child(2) {
+                @include s(width, 101);
+                @include s(height, 54);
+                @include s(top, 137);
+                @include s(left, -50);
+              }
+              &:nth-child(3) {
+                @include s(width, 76);
+                @include s(height, 84);
+                @include s(top, 68);
+                @include s(left, -50);
+              }
+            }
+          }
+        }
+        .text {
+          .subtitle {
+            font-weight: 500;
+            @include s(font-size, 28);
+            line-height: 115%;
+            color: var(--purple-color);
+          }
+        }
+        ul {
+          @include s(margin-top, 20);
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          @include s(gap, 12);
+          li {
+            @include s(padding-left, 48);
+            position: relative;
+            font-weight: 500;
+            @include s(font-size, 20);
+            line-height: 128%;
+            &:before {
+              content: "";
+              background-image: url("../img/icons/check-circle.svg");
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              @include s(width, 28);
+              @include s(height, 28);
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+        .btn {
+          @include s(margin-top, 34);
+        }
+      }
+    }
+  }
+}

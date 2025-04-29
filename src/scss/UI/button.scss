@@ -7,11 +7,11 @@
   &.primary {
     background: var(--txt-color);
     @include borr(12);
-    height: 40px;
     color: var(--white-color);
-    @include s(font-size, 16);
+    @include s(height, 56);
+    @include s(font-size, 20);
     font-weight: 500;
-    line-height: 106%;
+    line-height: 115%;
     &:hover {
       background: var(--purple-color);
     }
