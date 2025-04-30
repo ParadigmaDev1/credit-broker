@@ -1,0 +1,111 @@
+.consultation {
+  background-image: url("../img/consultation/bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include s(padding-top, 96);
+  @include s(padding-bottom, 68);
+  @include s(margin-top, -40);
+  z-index: 5;
+  @include borr(40, 40, 0, 0);
+  overflow: hidden;
+  position: relative;
+  .consultation-inner {
+    h3 {
+      font-weight: 500;
+      @include s(font-size, 56);
+      @include s(letter-spacing, -1);
+      line-height: 96%;
+      color: var(--white-color);
+    }
+    .form {
+      @include s(margin-top, 173);
+      display: grid;
+      @include gtc(498, 1fr);
+      align-items: flex-end;
+      @include s(gap, 138);
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        @include s(gap, 20);
+        li {
+          @include s(padding-left, 48);
+          position: relative;
+          font-weight: 500;
+          @include s(font-size, 20);
+          line-height: 128%;
+          color: var(--white-color);
+
+          &:before {
+            content: "";
+            background-image: url("../img/icons/check-circle.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            @include s(width, 28);
+            @include s(height, 28);
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        @include s(gap, 28);
+        .input-container {
+          background: var(--white-color);
+          @include borr(20);
+          @include padding(10);
+          display: flex;
+          align-items: center;
+          @include s(gap, 32);
+          .content {
+            display: flex;
+            align-items: center;
+            @include s(padding-left, 20);
+            p {
+              color: var(--gray-light-color);
+              font-weight: 500;
+              @include s(font-size, 20);
+              line-height: 115%;
+            }
+            input {
+              border: none;
+              outline: none;
+              font-weight: 500;
+              @include s(font-size, 20);
+              line-height: 115%;
+              &::placeholder {
+                color: var(--txt-color);
+                font-weight: 500;
+                @include s(font-size, 20);
+                line-height: 115%;
+                opacity: 1;
+              }
+              &:placeholder-shown {
+                color: var(--txt-color);
+                font-weight: 500;
+                @include s(font-size, 20);
+                line-height: 115%;
+                opacity: 1;
+              }
+            }
+          }
+        }
+        .policy {
+          color: var(--white-color);
+          font-weight: 500;
+          @include s(font-size, 12);
+          line-height: 128%;
+          a {
+            color: var(--purple-color);
+          }
+        }
+      }
+    }
+  }
+}

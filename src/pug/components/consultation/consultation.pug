@@ -1,0 +1,17 @@
+mixin consultation()
+    .consultation
+        .consultation-inner.container 
+            h3 Бесплатная <br>консультация
+            form.form
+                ul 
+                    li Разберу вашу ситуацию
+                    li Отвечу на интересующие вопросы
+                    li Предложу конкретные решения <br>для достижения результата
+                .input-wrapper
+                    label.input-container
+                        .content
+                            p Телефон:
+                            input(type="tel" placeholder="+7").input.input__valid-phone
+                        button.btn.primary.dot Отправить
+                    p.policy Нажимая кнопку, я соглашаюсь с 
+                        a(href="#" target="_blank") Политикой конфиденциальности

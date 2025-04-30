@@ -39,7 +39,6 @@ export function validateForm() {
 
   const validateFormFields = (form, isExtended) => {
     let isValid = true;
-
     const inputs = [
       {
         input: form.querySelector(".input__valid-name"),
