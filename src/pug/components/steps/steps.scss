@@ -1,0 +1,116 @@
+.steps {
+  background: var(--purple-color);
+  @include s(padding-top, 96);
+  @include s(margin-top, -40);
+  position: relative;
+  z-index: 4;
+  @include borr(40, 40, 0, 0);
+  overflow: hidden;
+  .steps-inner {
+    & > .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        font-weight: 500;
+        @include s(font-size, 56);
+        @include s(letter-spacing, -1);
+        line-height: 96%;
+        color: var(--white-color);
+      }
+      p {
+        font-weight: 500;
+        @include s(font-size, 20);
+        line-height: 115%;
+        color: var(--white-color);
+      }
+    }
+    .steps-swiper-wrapper {
+      @include s(margin-top, 41);
+      .steps-swiper {
+        position: relative;
+        .swiper-slide {
+          background: var(--white-color);
+          @include borr(20);
+          overflow: hidden;
+          .top {
+            @include padding(48);
+            display: flex;
+            justify-content: space-between;
+            @include s(gap, 56);
+            p {
+              font-weight: 500;
+              @include s(font-size, 28);
+              line-height: 115%;
+              @include s(max-width, 448);
+            }
+            .lines {
+              display: flex;
+              @include s(gap, 12);
+              .line {
+                @include s(width, 2);
+                @include s(height, 16);
+                background: var(--line-color);
+                border-radius: 999px;
+                &.active {
+                  background: var(--purple-light-color);
+                  @include s(height, 32);
+                }
+              }
+            }
+          }
+          .bottom {
+            mask: url("../img/steps/mask.svg") center/cover no-repeat;
+            @include s(height, 275);
+            @include borr(20);
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .navigation {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        @include s(right, -31);
+        @include s(left, -31);
+        z-index: 2;
+      }
+      .custom-pagination {
+        display: flex;
+        justify-content: space-between;
+        @include s(gap, 26);
+        @include s(margin-top, 24);
+        .pagination-item {
+          display: grid;
+          @include gtc(210, 1fr);
+          @include s(gap, 18);
+          @include s(padding-bottom, 20);
+          border-bottom: 1px solid var(--purple-light-color);
+          cursor: pointer;
+          transition: var(--trs-cubic-300);
+          &.active {
+            border-color: var(--white-color);
+            span,
+            p {
+              color: var(--white-color);
+            }
+          }
+          span,
+          p {
+            font-weight: 500;
+            @include s(font-size, 20);
+            line-height: 128%;
+            color: var(--purple-light-color);
+            transition: var(--trs-cubic-300);
+          }
+        }
+      }
+    }
+  }
+}
