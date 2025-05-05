@@ -6,6 +6,7 @@ import { validateForm } from "./modules/validate.js";
 import { inputsMask } from "./modules/inputs-mask.js";
 import { range } from "./modules/range.js";
 import { accordionFunc } from "./modules/accordion.js";
+import { modals } from "./modules/modals.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   swiper();
@@ -16,4 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
   range();
   quiz();
   accordionFunc();
+  modals();
 });

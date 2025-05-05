@@ -22,7 +22,7 @@ mixin quiz()
                             p.title Какая сумма вам необходима?
                             label.input-container 
                                 img(src="./img/quiz/rub.svg", alt="")
-                                input(type="text" value='1 000 000')
+                                input(type="text" value='1 000 000').value-input
                             .slider-wrapper 
                                 .slider-track 
                                     input(type='range' min='500000' max='50000000' step='100000').slider-input
@@ -34,7 +34,7 @@ mixin quiz()
                             p.title Срок кредита, мес.
                             label.input-container 
                                 img(src="./img/quiz/calendar.svg", alt="")
-                                input(type="text" value='120')
+                                input(type="text" value='120').value-input
                             .slider-wrapper 
                                 .slider-track 
                                     input(type='range' min='3' max='360' step='10').slider-input

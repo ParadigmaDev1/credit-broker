@@ -1,11 +1,12 @@
 export const range = () => {
-  const sliderWrapper = document.querySelectorAll(".slider-wrapper");
+  const sliderWrapper = document.querySelectorAll(".slider-wrapper ");
   if (sliderWrapper.length) {
     sliderWrapper.forEach((wrapper) => {
       const sliderInput = wrapper.querySelector(".slider-input");
       const sliderTrack = wrapper.querySelector(".slider-track");
       const sliderThumb = wrapper.querySelector(".slider-thumb");
-
+      const textInput = wrapper.parentElement.querySelector(".value-input");
+      console.log(textInput);
       const minValue = +sliderInput.min || 0;
       const maxValue = +sliderInput.max || 100;
 
@@ -83,6 +84,25 @@ export const range = () => {
       };
 
       sliderInput.addEventListener("pointerdown", detectSecret);
+
+      sliderInput.addEventListener("input", (e) => {
+        const rawValue = e.target.value.replace(/[^\d]/g, "");
+        const numericValue = parseInt(rawValue || 0);
+
+        textInput.value = numericValue.toLocaleString("ru-RU");
+
+        sliderInput.value = numericValue;
+      });
+
+      textInput.addEventListener("input", (e) => {
+        const rawValue = e.target.value.replace(/[^\d]/g, "");
+        const numericValue = parseInt(rawValue || 0);
+
+        textInput.value = numericValue.toLocaleString("ru-RU");
+
+        sliderInput.value = numericValue;
+        updateSlider();
+      });
     });
   }
 };
