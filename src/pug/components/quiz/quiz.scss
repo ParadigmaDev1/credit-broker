@@ -1,0 +1,244 @@
+.quiz {
+  @include s(padding-top, 96);
+  @include s(padding-bottom, 136);
+  background: linear-gradient(
+    180deg,
+    rgba(241, 243, 248, 1) 0%,
+    rgba(233, 233, 255, 1) 100%
+  );
+  .quiz-inner {
+    h3 {
+      font-weight: 500;
+      @include s(font-size, 56);
+      @include s(letter-spacing, -1);
+      line-height: 96%;
+      span {
+        color: var(--purple-color);
+      }
+    }
+    .quiz-form {
+      @include s(margin-top, 48);
+      @include borr(20);
+      @include padding(48);
+      background: var(--white-color);
+      display: grid;
+      @include gtc(362, 1fr);
+      @include s(gap, 46);
+      .quiz-form-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .main-info {
+          flex: 1;
+          .image-wrapper {
+            @include s(width, 128);
+            @include s(height, 128);
+            overflow: hidden;
+            border-radius: 9999px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: top;
+            }
+          }
+          .descr {
+            color: var(--purple-color);
+            font-weight: 500;
+            @include s(font-size, 20);
+            line-height: 115%;
+            @include s(margin-top, 16);
+          }
+        }
+        .progress {
+          display: flex;
+          flex-direction: column;
+          @include s(gap, 16);
+          .counter {
+            display: flex;
+            justify-content: space-between;
+            p {
+              font-weight: 500;
+              @include s(font-size, 56);
+              @include s(letter-spacing, -1);
+              line-height: 106%;
+              &:first-child {
+                color: var(--purple-color);
+              }
+            }
+          }
+          .line-wrapper {
+            background: var(--line-color);
+            height: 1px;
+            width: 100%;
+            position: relative;
+            .line {
+              background: var(--purple-color);
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              width: 30%;
+              height: 1px;
+              z-index: 2;
+              transition: var(--trs-cubic-300);
+            }
+          }
+        }
+      }
+      .quiz-step {
+        @include s(padding-left, 48);
+        border-left: 1px solid var(--line-color);
+        width: 100%;
+        display: none;
+        &.active {
+          display: block;
+        }
+        .inputs {
+          width: 100%;
+          .input-wrapper {
+            @include s(margin-top, 48);
+            width: 100%;
+            &:first-child {
+              margin-top: 0;
+            }
+            .title {
+              font-weight: 500;
+              @include s(font-size, 20);
+              line-height: 115%;
+            }
+            .input-container {
+              @include borr(12);
+              border: 1px solid var(--line-color);
+              display: flex;
+              align-items: center;
+              @include s(gap, 16);
+              @include padding(10);
+              @include s(margin-top, 16);
+              @include s(max-width, 384);
+              overflow: hidden;
+              img {
+                @include s(width, 36);
+                @include s(height, 36);
+              }
+              input {
+                border: none;
+                outline: none;
+                font-weight: 500;
+                @include s(font-size, 32);
+                line-height: 115%;
+                color: var(--purple-color);
+                width: 100%;
+              }
+            }
+            .slider-wrapper {
+              @include s(margin-top, 13);
+              width: 100%;
+              .slider-values {
+                display: flex;
+                justify-content: space-between;
+                @include s(margin-top, 13);
+                p {
+                  color: var(--gray-light-color);
+                  font-weight: 500;
+                  @include s(font-size, 16);
+                  line-height: 115%;
+                }
+              }
+            }
+            .radio-list {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              @include s(gap, 12);
+              width: 100%;
+              @include s(margin-top, 20);
+
+              label {
+                background: var(--back-purple-color);
+                @include borr(12);
+                @include padding(0, 20);
+                @include s(height, 60);
+                width: 100%;
+                display: flex;
+                align-items: center;
+                @include s(gap, 10);
+                cursor: pointer;
+                p {
+                  font-weight: 500;
+                  @include s(font-size, 14);
+                  line-height: 115%;
+                }
+              }
+            }
+          }
+        }
+        .final-content {
+          display: grid;
+          @include gtc(384, 1fr);
+          @include s(gap, 80);
+          @include s(margin-top, 76);
+
+          .col {
+            .title {
+              font-weight: 500;
+              @include s(font-size, 36);
+              line-height: 115%;
+            }
+            .descr {
+              font-weight: 500;
+              @include s(font-size, 20);
+              line-height: 115%;
+            }
+            .alert {
+              background: var(--back-purple-color);
+              @include borr(20);
+              @include padding(28);
+              display: flex;
+              align-items: center;
+              @include s(gap, 16);
+              @include s(margin-top, 24);
+              img {
+                @include s(width, 36);
+                @include s(height, 36);
+              }
+              p {
+                color: var(--purple-color);
+                font-weight: 500;
+                @include s(font-size, 32);
+                line-height: 115%;
+              }
+            }
+            .inputs {
+              @include s(margin-top, 24);
+              display: flex;
+              flex-direction: column;
+              @include s(gap, 24);
+            }
+            .policy {
+              @include s(margin-top, 24);
+              font-weight: 500;
+              @include s(font-size, 12);
+              line-height: 128%;
+              a {
+                color: var(--purple-color);
+              }
+            }
+          }
+        }
+        .btns {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @include s(margin-top, 70);
+
+          .btn {
+            @include s(width, 188);
+            &[type="submit"] {
+              @include s(width, 328);
+            }
+          }
+        }
+      }
+    }
+  }
+}

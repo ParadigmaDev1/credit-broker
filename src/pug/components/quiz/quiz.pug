@@ -1,0 +1,134 @@
+mixin quiz()
+    .quiz
+        .quiz-inner.container 
+            h3 Получите 
+                span подробный разбор 
+                | вашей ситуации
+            form.quiz-form 
+                .quiz-form-info 
+                    .main-info
+                        .image-wrapper 
+                            img(src="./img/person.jpg", alt="quiz")
+                        p.descr Заполните небольшую анкету и вы получите предварительный расчет ежемесячного платежа, а также, я расскажу, какие условия можно получить в вашей ситуации.
+                    .progress 
+                        .counter
+                            p.current 1
+                            p.total 4
+                        .line-wrapper 
+                            .line
+                .quiz-step.active(data-step='1') 
+                    .inputs 
+                        .input-wrapper.range-wrapper
+                            p.title Какая сумма вам необходима?
+                            label.input-container 
+                                img(src="./img/quiz/rub.svg", alt="")
+                                input(type="text" value='1 000 000')
+                            .slider-wrapper 
+                                .slider-track 
+                                    input(type='range' min='500000' max='50000000' step='100000').slider-input
+                                    .slider-thumb
+                                .slider-values 
+                                    p 500 000 ₽ 
+                                    p 50 000 000 ₽ 
+                        .input-wrapper.range-wrapper
+                            p.title Срок кредита, мес.
+                            label.input-container 
+                                img(src="./img/quiz/calendar.svg", alt="")
+                                input(type="text" value='120')
+                            .slider-wrapper 
+                                .slider-track 
+                                    input(type='range' min='3' max='360' step='10').slider-input
+                                    .slider-thumb
+                                .slider-values 
+                                    p 3
+                                    p 360 
+                    .btns 
+                        button.btn.primary.prev-step(type='button' disabled) Назад
+                        button.btn.primary.next-step(type='button') Далее
+                .quiz-step(data-step='2') 
+                    .inputs 
+                        .input-wrapper
+                            p.title Вы работаете?
+                            .radio-list 
+                                label
+                                    input(type="radio" name='work' checked)
+                                    p Официально трудоустроен
+                                label
+                                    input(type="radio" name='work')
+                                    p Работаю неофициально
+                                label
+                                    input(type="radio" name='work')
+                                    p Безработный на пенсии
+                        .input-wrapper
+                            p.title Какая у вас недвижимость?
+                            .radio-list 
+                                label
+                                    input(type="radio" name='realty' checked)
+                                    p Комната
+                                label
+                                    input(type="radio" name='realty')
+                                    p Квартира
+                                label
+                                    input(type="radio" name='realty')
+                                    p Дом
+                                label
+                                    input(type="radio" name='realty')
+                                    p Коммерческая
+                                label
+                                    input(type="radio" name='realty')
+                                    p Нет
+                    .btns 
+                        button.btn.primary.prev-step(type='button') Назад
+                        button.btn.primary.next-step(type='button') Далее
+                .quiz-step(data-step='3') 
+                    .inputs 
+                        .input-wrapper
+                            p.title Какая у вас кредитная история
+                            .radio-list 
+                                label
+                                    input(type="radio" name='credit' checked)
+                                    p Положительная
+                                label
+                                    input(type="radio" name='credit')
+                                    p Есть текущие просрочки
+                                label
+                                    input(type="radio" name='credit')
+                                    p Есть погашенные просрочки
+                                label
+                                    input(type="radio" name='credit')
+                                    p Не знаю
+                        .input-wrapper
+                            p.title Какая у вас недвижимость?
+                            .radio-list 
+                                label
+                                    input(type="radio" name='bank' checked)
+                                    p Да
+                                label
+                                    input(type="radio" name='bank')
+                                    p Нет
+                    .btns 
+                        button.btn.primary.prev-step(type='button') Назад
+                        button.btn.primary.next-step(type='button') Далее
+                     
+                .quiz-step(data-step='4') 
+                    .final-content 
+                        .col 
+                            p.descr По предварительному расчёту  ваш ежемесячный платеж по кредиту будет составлять:
+                            .alert 
+                                img(src="./img/quiz/rub.svg", alt="")
+                                p 5 000 - 10 000
+                        .col 
+                            p.title Отправить заявку
+                            .inputs 
+                                .input__row
+                                    input(type="text" placeholder="Представьтесь").custom-input.input.form__input-value.input__valid-name
+                                    .input__item-small
+                                .input__row
+                                    input(type="tel" placeholder="+7 (").custom-input.input.form__input-value.input__valid-phone
+                                    .input__item-small
+                            p.policy Нажимая кнопку, я соглашаюсь <br> с 
+                                a(href="#" target="_blank") Политикой конфиденциальности
+                    .btns 
+                        button.btn.primary.prev-step(type='button') Назад
+                        button.btn.primary.dot.next-step(type='submit') Отправить заявку
+                     

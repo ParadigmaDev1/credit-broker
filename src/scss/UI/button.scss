@@ -12,6 +12,11 @@
     @include s(font-size, 20);
     font-weight: 500;
     line-height: 115%;
+    &:disabled {
+      background: var(--back-color);
+      pointer-events: none;
+      color: var(--gray-light-color);
+    }
     &:hover {
       background: var(--purple-color);
     }
