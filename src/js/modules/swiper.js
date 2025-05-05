@@ -35,6 +35,28 @@ export const swiper = () => {
     //   },
     // },
   });
+  const certificatesSwiper = new Swiper(".certificates-swiper", {
+    modules: [Pagination, Navigation],
+    slidesPerView: 1,
+    navigation: {
+      prevEl: ".certificates-prev",
+      nextEl: ".certificates-next",
+    },
+    // pagination: {
+    //   el: ".products-pagination",
+    //   type: "progressbar",
+    // },
+    // breakpoints: {
+    //   0: {
+    //     slidesPerView: 2,
+    //     spaceBetween: 20,
+    //   },
+    //   767: {
+    //     slidesPerView: 4,
+    //     spaceBetween: 24,
+    //   },
+    // },
+  });
   const historySwiper = new Swiper(".history-swiper ", {
     modules: [Pagination, Navigation],
     slidesPerView: 1.4,

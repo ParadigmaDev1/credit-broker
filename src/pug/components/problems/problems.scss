@@ -127,6 +127,7 @@
         display: flex;
         align-items: center;
         @include s(gap, 24);
+        height: auto;
         p {
           flex: 1;
           color: var(--white-color);

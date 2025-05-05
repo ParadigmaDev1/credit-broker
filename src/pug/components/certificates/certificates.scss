@@ -1,0 +1,69 @@
+.certificates {
+  overflow: hidden;
+  @include s(padding-top, 96);
+  .certificates-inner {
+    display: grid;
+    @include gtc(1fr, 408);
+    @include s(gap, 48);
+    .certificates-swiper {
+      position: relative;
+      @include s(height, 480);
+      overflow: hidden;
+      @include borr(20);
+      .swiper-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .navigation {
+        position: absolute;
+        margin: auto;
+        z-index: 2;
+        @include s(bottom, 28);
+        @include s(right, 28);
+        @include s(gap, 4);
+      }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h3 {
+        font-weight: 500;
+        @include s(font-size, 56);
+        @include s(letter-spacing, -1);
+        line-height: 96%;
+      }
+      .alert {
+        background: var(--back-purple-color);
+        @include borr(20);
+        @include padding(36);
+        .image-wrapper {
+          @include s(width, 56);
+          @include s(height, 56);
+          @include borr(12);
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include borr(12);
+          }
+        }
+        .descr {
+          @include s(margin-top, 16);
+          font-weight: 500;
+          @include s(font-size, 20);
+          line-height: 128%;
+        }
+      }
+    }
+  }
+}
