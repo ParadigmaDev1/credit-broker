@@ -5,6 +5,7 @@ import { quiz } from "../pug/components/quiz/quiz.js";
 import { validateForm } from "./modules/validate.js";
 import { inputsMask } from "./modules/inputs-mask.js";
 import { range } from "./modules/range.js";
+import { accordionFunc } from "./modules/accordion.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   swiper();
@@ -14,4 +15,5 @@ document.addEventListener("DOMContentLoaded", () => {
   inputsMask();
   range();
   quiz();
+  accordionFunc();
 });

@@ -1,0 +1,69 @@
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: var(--trs-cubic-600);
+  &.active {
+    .accordion-title {
+      .title {
+        color: var(--purple-color);
+      }
+      .icon {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    @include s(gap, 12);
+    pointer-events: none;
+  }
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include s(gap, 20);
+    transition: var(--trs-cubic-300);
+    @include padding(24, 0);
+    background: none;
+    border: none;
+    cursor: pointer;
+    .title {
+      font-weight: 500;
+      @include s(font-size, 28);
+      line-height: 115%;
+      pointer-events: none;
+      transition: var(--trs-cubic-300);
+    }
+    .icon {
+      transition: var(--trs-cubic-300);
+      pointer-events: none;
+      @include s(width, 16);
+      @include s(height, 8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        @include s(width, 16);
+        @include s(height, 8);
+      }
+    }
+  }
+  .collapse {
+    transition: var(--trs-cubic-300);
+    display: flex;
+    align-items: flex-start;
+    @include s(padding-bottom, 24);
+    @media (max-width: $tab-sm) {
+      padding-left: 0;
+    }
+    p {
+      font-weight: 500;
+      @include s(font-size, 18);
+      line-height: 148%;
+    }
+  }
+}
