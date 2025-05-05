@@ -8,6 +8,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @media (max-width: $tab-sm) {
+    @include s(padding-bottom, 84);
+    @include s(padding-top, 64);
+    @include borr(20, 20, 0, 0);
+  }
   .reasons-inner {
     h3 {
       font-weight: 500;
@@ -15,6 +20,10 @@
       @include s(letter-spacing, -1);
       line-height: 96%;
       color: var(--white-color);
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 28);
+        line-height: 106%;
+      }
       span {
         color: var(--purple-color);
       }
@@ -24,6 +33,11 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       @include s(gap, 24);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(gap, 4);
+        @include s(margin-top, 20);
+      }
       .reason-item {
         @include padding(48, 44);
         @include borr(20);
@@ -33,7 +47,10 @@
         flex-direction: column;
         justify-content: space-between;
         @include s(gap, 30);
-
+        @media (max-width: $tab-sm) {
+          @include padding(22, 24);
+          @include s(gap, 24);
+        }
         .main-content {
           flex: 1;
           .title {
@@ -41,6 +58,9 @@
             font-weight: 500;
             @include s(font-size, 28);
             line-height: 115%;
+            @media (max-width: $tab-sm) {
+              @include s(font-size, 22);
+            }
           }
           .descr {
             color: var(--white-color);
@@ -48,6 +68,10 @@
             @include s(font-size, 20);
             line-height: 128%;
             @include s(margin-top, 16);
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 6);
+              @include s(font-size, 14);
+            }
           }
         }
         .step {
@@ -59,10 +83,17 @@
             @include s(font-size, 72);
             line-height: 96%;
             color: var(--white-color);
+            @media (max-width: $tab-sm) {
+              @include s(font-size, 40);
+            }
           }
           img {
             @include s(width, 56);
             @include s(height, 56);
+            @media (max-width: $tab-sm) {
+              @include s(width, 28);
+              @include s(height, 28);
+            }
           }
         }
       }

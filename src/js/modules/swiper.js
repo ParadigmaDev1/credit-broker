@@ -20,20 +20,19 @@ export const swiper = () => {
       prevEl: ".problems-prev",
       nextEl: ".problems-next",
     },
-    // pagination: {
-    //   el: ".products-pagination",
-    //   type: "progressbar",
-    // },
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20,
-    //   },
-    //   767: {
-    //     slidesPerView: 4,
-    //     spaceBetween: 24,
-    //   },
-    // },
+    pagination: {
+      el: ".pagination",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.1,
+        spaceBetween: 4,
+      },
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+    },
   });
   const certificatesSwiper = new Swiper(".certificates-swiper", {
     modules: [Pagination, Navigation],
@@ -42,43 +41,41 @@ export const swiper = () => {
       prevEl: ".certificates-prev",
       nextEl: ".certificates-next",
     },
-    // pagination: {
-    //   el: ".products-pagination",
-    //   type: "progressbar",
-    // },
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20,
-    //   },
-    //   767: {
-    //     slidesPerView: 4,
-    //     spaceBetween: 24,
-    //   },
-    // },
+    pagination: {
+      el: ".pagination",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      767: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+    },
   });
   const historySwiper = new Swiper(".history-swiper ", {
     modules: [Pagination, Navigation],
     slidesPerView: 1.4,
     spaceBetween: 24,
-    // navigation: {
-    //   prevEl: ".problems-prev",
-    //   nextEl: ".problems-next",
-    // },
-    // pagination: {
-    //   el: ".products-pagination",
-    //   type: "progressbar",
-    // },
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20,
-    //   },
-    //   767: {
-    //     slidesPerView: 4,
-    //     spaceBetween: 24,
-    //   },
-    // },
+    navigation: {
+      prevEl: ".history-prev",
+      nextEl: ".history-next",
+    },
+    pagination: {
+      el: ".pagination",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 4,
+      },
+      767: {
+        slidesPerView: 1.4,
+        spaceBetween: 24,
+      },
+    },
   });
 
   const stepsSwiper = new Swiper(".steps-swiper", {
@@ -105,20 +102,19 @@ export const swiper = () => {
         }
       },
     },
-    // pagination: {
-    //   el: ".products-pagination",
-    //   type: "progressbar",
-    // },
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20,
-    //   },
-    //   767: {
-    //     slidesPerView: 4,
-    //     spaceBetween: 24,
-    //   },
-    // },
+    pagination: {
+      el: ".pagination",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.1,
+        spaceBetween: 4,
+      },
+      767: {
+        slidesPerView: 1.5,
+        spaceBetween: 24,
+      },
+    },
   });
 
   if (steps) {

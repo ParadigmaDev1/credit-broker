@@ -8,11 +8,15 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
+  @media (max-width: $tab-sm) {
+    @include s(padding-top, 64);
+  }
   .problems-inner {
     position: relative;
-
     @include s(padding-bottom, 136);
-
+    @media (max-width: $tab-sm) {
+      @include s(padding-bottom, 85);
+    }
     .image-block {
       position: absolute;
       bottom: 0;
@@ -20,6 +24,13 @@
       @include s(right, 79);
       @include s(bottom, 36);
       z-index: 2;
+      // @media (max-width: $tab-sm) {
+      //   display: none;
+      // }
+      @media (max-width: $tab-sm) {
+        @include s(bottom, 161);
+        @include s(right, 66);
+      }
       & > img {
         z-index: 2;
         position: relative;
@@ -37,6 +48,11 @@
         @include s(width, 607);
         @include s(height, 607);
         z-index: 1;
+        @media (max-width: $tab-sm) {
+          @include s(width, 294);
+          @include s(height, 294);
+          @include s(left, -43);
+        }
         &:before {
           content: "";
           @include s(width, 607);
@@ -54,6 +70,10 @@
           right: 0;
           bottom: 0;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(width, 294);
+            @include s(height, 294);
+          }
         }
         &:after {
           content: "";
@@ -73,12 +93,20 @@
           right: 0;
           bottom: 0;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(width, 169);
+            @include s(height, 169);
+          }
         }
       }
 
       img {
         @include s(width, 453);
         @include s(height, 666);
+        @media (max-width: $tab-sm) {
+          @include s(width, 219);
+          @include s(height, 322);
+        }
       }
     }
     .text-block {
@@ -89,6 +117,10 @@
         @include s(font-size, 56);
         @include s(letter-spacing, -1);
         line-height: 96%;
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 28);
+          line-height: 106%;
+        }
         span {
           color: var(--purple-color);
         }
@@ -98,12 +130,22 @@
         align-items: center;
         @include s(gap, 28);
         @include s(margin-top, 48);
+        @media (max-width: $tab-sm) {
+          @include s(gap, 16);
+          @include s(margin-top, 20);
+        }
         img {
           @include s(width, 72);
           @include s(height, 72);
           object-position: top;
           border-radius: 999px;
           object-fit: cover;
+          @media (max-width: $tab-sm) {
+            @include s(min-width, 72);
+            @include s(max-width, 72);
+            @include s(min-height, 72);
+            @include s(max-height, 72);
+          }
         }
         p {
           font-weight: 500;
@@ -111,6 +153,9 @@
           line-height: 128%;
           color: var(--purple-color);
           @include s(max-width, 332);
+          @media (max-width: $tab-sm) {
+            @include s(font-size, 16);
+          }
         }
       }
     }
@@ -118,7 +163,9 @@
       @include s(margin-top, 108);
       position: relative;
       z-index: 2;
-
+      @media (max-width: $tab-sm) {
+        @include s(margin-top, 248);
+      }
       .swiper-slide {
         background: rgba(128, 109, 249, 0.8);
         backdrop-filter: blur(10px);
@@ -128,12 +175,18 @@
         align-items: center;
         @include s(gap, 24);
         height: auto;
+        @media (max-width: $tab-sm) {
+          @include padding(24);
+        }
         p {
           flex: 1;
           color: var(--white-color);
           font-weight: 500;
           @include s(font-size, 20);
           line-height: 128%;
+          @media (max-width: $tab-sm) {
+            @include s(font-size, 16);
+          }
         }
         img {
           @include s(width, 56);
@@ -148,6 +201,23 @@
         @include s(right, -31);
         @include s(left, -31);
         z-index: 2;
+        @media (max-width: $tab-sm) {
+          position: relative;
+          left: 0;
+          right: 0;
+          @include s(margin-top, 20);
+        }
+      }
+      .pagination {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+        @include s(bottom, 16);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: auto;
       }
     }
   }

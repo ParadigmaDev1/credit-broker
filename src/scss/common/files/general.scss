@@ -126,3 +126,27 @@ svg {
     }
   }
 }
+.pagination {
+  @include s(gap, 12);
+  @include s(height, 32);
+
+  align-items: flex-start !important;
+  display: none;
+  @media (max-width: $tab-sm) {
+    display: flex;
+  }
+  .swiper-pagination-bullet {
+    @include s(height, 16);
+    @include s(width, 2);
+    border-radius: 999px;
+    background: var(--line-color);
+    opacity: 1;
+    transition: var(--trs-cubic-300);
+    transform-origin: bottom;
+    margin: 0 !important;
+    &.swiper-pagination-bullet-active {
+      @include s(height, 32);
+      background: var(--purple-color);
+    }
+  }
+}

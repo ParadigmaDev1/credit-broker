@@ -5,12 +5,21 @@
   background: var(--white-color);
   z-index: 2;
   position: relative;
+  @media (max-width: $tab-sm) {
+    @include s(padding-top, 64);
+    @include s(margin-top, -32);
+    @include borr(20, 20, 0, 0);
+  }
   .situations-inner {
     h3 {
       font-weight: 500;
       @include s(font-size, 56);
       @include s(letter-spacing, -1);
       line-height: 96%;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 28);
+        line-height: 106%;
+      }
       span {
         color: var(--purple-color);
       }
@@ -21,6 +30,11 @@
       grid-template-columns: repeat(3, 1fr);
       @include s(gap, 24);
       align-items: flex-start;
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(margin-top, 20);
+        @include s(gap, 20);
+      }
       .situations-item {
         display: flex;
         flex-direction: column;
@@ -31,6 +45,10 @@
           @include s(height, 356);
           object-fit: cover;
           margin: auto;
+          @media (max-width: $tab-sm) {
+            @include s(width, 206);
+            @include s(height, 218);
+          }
         }
         .content {
           background: var(--back-color);
@@ -40,31 +58,54 @@
           position: relative;
           z-index: 2;
           flex: 1;
+          @media (max-width: $tab-sm) {
+            @include padding(22, 24);
+            @include s(margin-top, -85);
+          }
           .title {
             font-weight: 500;
             @include s(font-size, 28);
             line-height: 115%;
             @include s(padding-bottom, 28);
             border-bottom: 1px solid var(--gray-light-color);
+            @media (max-width: $tab-sm) {
+              @include s(font-size, 20);
+              @include s(padding-bottom, 16);
+            }
           }
           .person {
             display: flex;
             flex-direction: column;
             @include s(gap, 12);
             @include s(margin-top, 28);
-
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 16);
+              @include s(gap, 20);
+              flex-direction: row;
+            }
             img {
               @include s(width, 64);
               @include s(height, 64);
               border-radius: 999px;
               object-fit: cover;
               object-position: top;
+              @media (max-width: $tab-sm) {
+                @include s(width, 36);
+                @include s(min-width, 36);
+                @include s(max-width, 36);
+                @include s(height, 36);
+                @include s(min-height, 36);
+                @include s(max-height, 36);
+              }
             }
             p {
               color: var(--purple-color);
               font-weight: 500;
               @include s(font-size, 20);
               line-height: 128%;
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 16);
+              }
             }
           }
         }

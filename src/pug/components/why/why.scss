@@ -2,6 +2,10 @@
   @include s(margin-top, 96);
   @include s(padding-bottom, 135);
   position: relative;
+  @media (max-width: $tab-sm) {
+    @include s(margin-top, 64);
+    @include s(padding-bottom, 84);
+  }
   &:before {
     content: "";
     position: absolute;
@@ -14,6 +18,9 @@
       rgba(233, 233, 255, 1) 100%
     );
     @include s(height, 248);
+    @media (max-width: $tab-sm) {
+      @include s(height, 128);
+    }
   }
   .why-inner {
     position: relative;
@@ -23,23 +30,39 @@
       @include s(font-size, 56);
       @include s(letter-spacing, -1);
       line-height: 96%;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 28);
+      }
       span {
         color: var(--purple-color);
       }
     }
     .why-list-wrapper {
       @include s(margin-top, 48);
-
+      @media (max-width: $tab-sm) {
+        @include s(margin-top, 20);
+      }
       .alert-list {
         display: flex;
         align-items: center;
         @include s(gap, 24);
         @include s(margin-left, 228);
+        @media (max-width: $tab-sm) {
+          margin-left: 0;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          @include s(gap, 20);
+        }
         .why-alert {
           @include padding(48);
           @include borr(20, 20, 20, 0);
           @include s(width, 546);
           position: relative;
+          @media (max-width: $tab-sm) {
+            @include padding(15);
+            width: 100%;
+            @include borr(12, 12, 12, 0);
+          }
           &:before {
             content: "";
             position: absolute;
@@ -73,6 +96,10 @@
               @include s(height, 28);
               border-radius: 999px;
               background: rgba(255, 255, 255, 0.1);
+              @media (max-width: $tab-sm) {
+                @include s(width, 7);
+                @include s(height, 7);
+              }
             }
           }
           .text {
@@ -81,11 +108,19 @@
             @include gtc(288, 1fr);
             justify-content: space-between;
             @include s(gap, 14);
+            @media (max-width: $tab-sm) {
+              grid-template-columns: 1fr;
+              @include s(gap, 5);
+              @include s(margin-top, 10);
+            }
             .title {
               font-weight: 500;
               @include s(font-size, 36);
               line-height: 106%;
               color: var(--white-color);
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 15);
+              }
             }
             .percent {
               display: flex;
@@ -98,6 +133,9 @@
                 font-weight: 500;
                 @include s(font-size, 16);
                 line-height: 88%;
+                @media (max-width: $tab-sm) {
+                  @include s(font-size, 11);
+                }
               }
               p {
                 color: var(--white-color);
@@ -105,6 +143,10 @@
                 @include s(font-size, 56);
                 line-height: 88%;
                 @include s(letter-spacing, -4);
+                @media (max-width: $tab-sm) {
+                  @include s(font-size, 36);
+                  @include s(letter-spacing, -2);
+                }
               }
             }
           }
@@ -114,6 +156,9 @@
         @include s(margin-top, 40);
         display: flex;
         flex-direction: column;
+        @media (max-width: $tab-sm) {
+          @include s(margin-top, 35);
+        }
         .row {
           display: grid;
           @include gtc(204, 1fr, 1fr);
@@ -121,6 +166,14 @@
           @include s(padding-bottom, 20);
           @include s(padding-top, 20);
           border-bottom: 1px solid var(--line-color);
+          @media (max-width: $tab-sm) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "title title" "remove check";
+            @include s(column-gap, 20);
+            @include s(row-gap, 10);
+            @include s(padding-bottom, 16);
+            @include s(padding-top, 16);
+          }
           &:first-child {
             padding-top: 0;
           }
@@ -133,6 +186,10 @@
             font-weight: 500;
             @include s(font-size, 20);
             line-height: 115%;
+            @media (max-width: $tab-sm) {
+              grid-area: title;
+              @include s(font-size, 16);
+            }
           }
           .why-item {
             display: flex;
@@ -142,13 +199,25 @@
             @include s(font-size, 18);
             line-height: 148%;
             position: relative;
-
+            @media (max-width: $tab-sm) {
+              flex-direction: column;
+              padding-left: 0;
+              @include s(font-size, 14);
+              line-height: 128%;
+              @include s(gap, 4);
+            }
             &.remove {
+              @media (max-width: $tab-sm) {
+                grid-area: remove;
+              }
               &:before {
                 background-image: url("../img/icons/remove-icon.svg");
               }
             }
             &.check {
+              @media (max-width: $tab-sm) {
+                grid-area: check;
+              }
               &:before {
                 background-image: url("../img/icons/check-circle.svg");
               }
@@ -163,6 +232,11 @@
               background-position: center;
               background-repeat: no-repeat;
               background-size: contain;
+              @media (max-width: $tab-sm) {
+                position: relative;
+                @include s(width, 20);
+                @include s(height, 20);
+              }
             }
           }
         }

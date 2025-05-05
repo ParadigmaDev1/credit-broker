@@ -6,7 +6,7 @@ export const why = () => {
     whyAlerts.forEach((alert) => {
       const circlesContainer = alert.querySelector(".circles");
       circlesContainer.innerHTML = "";
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 14; i++) {
         const circle = document.createElement("div");
         circle.classList.add("circle");
         circlesContainer.appendChild(circle);

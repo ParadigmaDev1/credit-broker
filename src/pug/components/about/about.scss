@@ -6,6 +6,10 @@
   background: var(--white-color);
   position: relative;
   z-index: 3;
+  @media (max-width: $tab-sm) {
+    @include s(padding-top, 64);
+    @include s(margin-top, -32);
+  }
   .about-inner {
     display: grid;
     @include gtc(294, 1fr, 546);
@@ -13,19 +17,31 @@
       "title title img"
       "img-alert descr img"
       "img-alert info info";
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 2fr;
+      grid-template-areas: "title title" "img-alert descr" "info info";
+    }
     .title-wrapper {
       @include s(padding-bottom, 68);
       border-bottom: 1px solid var(--line-color);
       grid-area: title;
       height: fit-content;
       @include s(margin-right, 64);
-
+      @media (max-width: $tab-sm) {
+        @include s(padding-bottom, 28);
+        margin-right: 0;
+        @include s(margin-bottom, 28);
+      }
       h3 {
         @include s(max-width, 660);
         font-weight: 500;
         @include s(font-size, 56);
         @include s(letter-spacing, -1);
         line-height: 96%;
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 28);
+          line-height: 106%;
+        }
         span {
           color: var(--purple-color);
         }
@@ -37,6 +53,9 @@
       @include s(width, 294);
       overflow: hidden;
       @include borr(20);
+      @media (max-width: $tab-sm) {
+        @include s(width, 93);
+      }
       img {
         width: 100%;
         height: 100%;
@@ -50,7 +69,11 @@
       @include s(margin-left, 48);
       line-height: 115%;
       @include s(margin-right, 64);
-
+      @media (max-width: $tab-sm) {
+        margin-right: 0;
+        @include s(margin-left, 20);
+        @include s(font-size, 20);
+      }
       span {
         color: var(--purple-color);
       }
@@ -62,20 +85,46 @@
       @include s(gap, 48);
       @include s(margin-left, 48);
       @include s(margin-top, 72);
+      @media (max-width: $tab-sm) {
+        margin-left: 0;
+        @include s(margin-top, 28);
+        @include s(gap, 28);
+      }
       .row {
         @include s(padding-top, 18);
         border-top: 1px solid var(--line-color);
         display: grid;
-        @include gtc(204, 1fr, 294);
+        // display: flex;
+        // justify-content: space-between;
+        @include gtc(200, 1fr, 294);
+        @include s(gap, 27);
+        @media (max-width: $tab-sm) {
+          @include s(column-gap, 20);
+          @include s(row-gap, 8);
+          @include s(padding-top, 20);
+          @include gtc(116, 1fr);
+          grid-template-areas: "value lines" "descr descr";
+        }
         .value {
           font-weight: 400;
           @include s(font-size, 72);
           line-height: 96%;
           @include s(letter-spacing, -2);
+          @media (max-width: $tab-sm) {
+            @include s(font-size, 40);
+            line-height: 80%;
+            grid-area: value;
+          }
+          // @include s(max-width, 204);
+          // @include s(min-width, 204);
         }
         .lines {
           display: flex;
-          @include s(gap, 10);
+          @include s(gap, 6);
+          @media (max-width: $tab-sm) {
+            grid-area: lines;
+            @include s(gap, 3);
+          }
           .line {
             @include s(width, 2);
             @include s(height, 10);
@@ -86,17 +135,30 @@
         .circles {
           display: flex;
           // @include s(gap, 10);
+          @media (max-width: $tab-sm) {
+            grid-area: lines;
+          }
           .circle {
             @include s(width, 48);
             @include s(height, 48);
             background: var(--back-color);
             border-radius: 999px;
+            @media (max-width: $tab-sm) {
+              @include s(width, 22);
+              @include s(height, 22);
+            }
           }
         }
         .descr {
           font-weight: 500;
           @include s(font-size, 20);
+          // @include s(max-width, 294);
+          // @include s(min-width, 294);
+          width: 100%;
           line-height: 128%;
+          @media (max-width: $tab-sm) {
+            grid-area: descr;
+          }
         }
       }
     }
@@ -106,6 +168,9 @@
       @include s(height, 628);
       overflow: hidden;
       @include borr(20);
+      @media (max-width: $tab-sm) {
+        display: none;
+      }
       img {
         width: 100%;
         height: 100%;

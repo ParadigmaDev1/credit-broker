@@ -4,6 +4,10 @@
   @include s(padding-bottom, 136);
   position: relative;
   overflow: hidden;
+  @media (max-width: $tab-sm) {
+    @include s(padding-top, 64);
+    @include s(padding-bottom, 114);
+  }
   .stats-inner {
     h3 {
       text-align: center;
@@ -14,16 +18,34 @@
       color: var(--white-color);
       @include s(max-width, 888);
       margin: auto;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 28);
+        line-height: 106%;
+      }
     }
     .list {
       @include s(margin-top, 48);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       @include s(gap, 24);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(margin-top, 20);
+        @include s(gap, 64);
+      }
       .stats-item {
+        @media (max-width: $tab-sm) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
         img {
           @include s(width, 433);
           @include s(height, 304);
+          @media (max-width: $tab-sm) {
+            @include s(width, 206);
+            @include s(height, 145);
+          }
         }
         .title {
           text-align: center;
@@ -33,6 +55,11 @@
           @include s(font-size, 56);
           @include s(letter-spacing, -1);
           line-height: 96%;
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 12);
+            @include s(font-size, 36);
+            line-height: 106%;
+          }
         }
         .descr {
           text-align: center;
@@ -41,6 +68,10 @@
           font-weight: 500;
           @include s(font-size, 18);
           line-height: 128%;
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 6);
+            @include s(font-size, 14);
+          }
         }
       }
     }

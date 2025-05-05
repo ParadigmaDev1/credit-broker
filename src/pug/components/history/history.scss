@@ -6,18 +6,30 @@
   z-index: 6;
   position: relative;
   overflow: hidden;
+  @media (max-width: $tab-sm) {
+    @include borr(20, 20, 0, 0);
+    @include s(padding-top, 64);
+    @include s(margin-top, -32);
+  }
   .history-inner {
     h3 {
       font-weight: 500;
       @include s(font-size, 56);
       @include s(letter-spacing, -1);
       line-height: 96%;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 28);
+        line-height: 106%;
+      }
       span {
         color: var(--purple-color);
       }
     }
     .history-swiper {
       @include s(margin-top, 48);
+      @media (max-width: $tab-sm) {
+        @include s(margin-top, 20);
+      }
       .swiper-slide {
         background: var(--white-color);
         @include borr(20);
@@ -25,15 +37,27 @@
         display: grid;
         @include gtc(148, 1fr);
         @include s(gap, 20);
+        @media (max-width: $tab-sm) {
+          @include padding(20, 24, 24);
+          grid-template-columns: 1fr;
+          @include s(gap, 16);
+        }
         .info-block {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          @media (max-width: $tab-sm) {
+            flex-direction: row;
+          }
           .image-wrapper {
             @include s(width, 88);
             @include s(height, 88);
             border-radius: 9999px;
             overflow: hidden;
+            @media (max-width: $tab-sm) {
+              @include s(width, 48);
+              @include s(height, 48);
+            }
             img {
               width: 100%;
               height: 100%;
@@ -44,26 +68,43 @@
             display: flex;
             flex-direction: column;
             @include s(gap, 8);
+            @media (max-width: $tab-sm) {
+              @include s(gap, 6);
+              align-items: flex-end;
+            }
             .name {
               font-weight: 500;
               @include s(font-size, 20);
               line-height: 115%;
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 12);
+                text-align: right;
+              }
             }
             .date {
               font-weight: 500;
               @include s(font-size, 20);
               line-height: 115%;
               color: var(--gray-light-color);
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 12);
+              }
             }
           }
         }
         .content-block {
           border-left: 1px solid var(--line-color);
           @include s(padding-left, 48);
+          @media (max-width: $tab-sm) {
+            padding-left: 0;
+          }
           .title {
             font-weight: 500;
             @include s(font-size, 28);
             line-height: 115%;
+            @media (max-width: $tab-sm) {
+              @include s(font-size, 20);
+            }
             span {
               color: var(--purple-color);
             }
@@ -74,14 +115,49 @@
             font-weight: 500;
             @include s(font-size, 20);
             line-height: 115%;
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 16);
+              @include s(font-size, 16);
+            }
           }
           .descr {
             @include s(margin-top, 12);
             font-weight: 500;
             @include s(font-size, 18);
             line-height: 148%;
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 6);
+              @include s(font-size, 14);
+              line-height: 128%;
+            }
           }
         }
+      }
+      .navigation {
+        display: none;
+        @media (max-width: $tab-sm) {
+          display: flex;
+        }
+        position: relative;
+        left: 0;
+        right: 0;
+        @include s(margin-top, 20);
+        z-index: 2;
+      }
+      .pagination {
+        display: none;
+        @media (max-width: $tab-sm) {
+          display: flex;
+        }
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
+        @include s(bottom, 16);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: auto;
       }
     }
   }

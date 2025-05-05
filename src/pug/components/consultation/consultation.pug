@@ -1,5 +1,7 @@
 mixin consultation()
     .consultation
+        .bg
+            img(src="./img/consultation/bg.jpg", alt="bg").bg
         .consultation-inner.container 
             h3 Бесплатная <br>консультация
             form.form
@@ -14,4 +16,4 @@ mixin consultation()
                             input(type="tel" placeholder="+7").input.input__valid-phone
                         button.btn.primary.dot Отправить
                     p.policy Нажимая кнопку, я соглашаюсь с 
-                        a(href="#" target="_blank") Политикой конфиденциальности
+                        a(href="#" target="_blank") Политикой конфиденциальности

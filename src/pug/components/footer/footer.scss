@@ -5,19 +5,35 @@
   background-position: center;
   background-size: cover;
   @include padding(96, 0, 58);
+  @media (max-width: $tab-sm) {
+    @include borr(20, 20, 0, 0);
+    @include padding(64, 0, 76);
+  }
   .footer-inner {
     .footer-top {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       @include s(gap, 24);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(gap, 4);
+      }
       .col {
         @include borr(20);
+        @media (max-width: $tab-sm) {
+          &:nth-child(1) {
+            @include s(margin-bottom, 16);
+          }
+        }
         &:nth-child(2) {
           background: var(--white-color);
           @include padding(48);
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          @media (max-width: $tab-sm) {
+            @include padding(24);
+          }
           .content {
             flex: 1;
           }
@@ -32,6 +48,9 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          @media (max-width: $tab-sm) {
+            @include padding(24);
+          }
           .content {
             flex: 1;
           }
@@ -44,6 +63,9 @@
           font-weight: 500;
           @include s(font-size, 32);
           line-height: 128%;
+          @media (max-width: $tab-sm) {
+            @include s(font-size, 24);
+          }
         }
         .to-map {
           color: var(--white-color);
@@ -54,9 +76,18 @@
           align-items: center;
           @include s(gap, 20);
           @include s(margin-top, 24);
+          @media (max-width: $tab-sm) {
+            @include s(gap, 12);
+            @include s(margin-top, 12);
+            @include s(font-size, 16);
+          }
           img {
             @include s(width, 48);
             @include s(height, 48);
+            @media (max-width: $tab-sm) {
+              @include s(width, 28);
+              @include s(height, 28);
+            }
           }
         }
         .address {
@@ -64,11 +95,17 @@
           font-weight: 500;
           @include s(font-size, 32);
           line-height: 128%;
+          @media (max-width: $tab-sm) {
+            @include s(font-size, 24);
+          }
         }
         .info {
           display: flex;
           flex-direction: column;
           @include s(gap, 4);
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 24);
+          }
           .row {
             display: flex;
             justify-content: space-between;
@@ -79,12 +116,20 @@
               img {
                 @include s(width, 20);
                 @include s(height, 20);
+                @media (max-width: $tab-sm) {
+                  @include s(width, 16);
+                  @include s(height, 16);
+                }
               }
               .circle {
                 @include s(width, 20);
                 @include s(height, 20);
                 border-radius: 999px;
                 background: var(--white-color);
+                @media (max-width: $tab-sm) {
+                  @include s(width, 16);
+                  @include s(height, 16);
+                }
                 &:last-child {
                   background: var(--purple-light-color);
                 }
@@ -95,6 +140,9 @@
               font-weight: 500;
               @include s(font-size, 20);
               line-height: 128%;
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 16);
+              }
             }
           }
         }
@@ -104,13 +152,20 @@
           @include s(font-size, 20);
           line-height: 128%;
           @include s(margin-bottom, 36);
+          @media (max-width: $tab-sm) {
+            @include s(padding-bottom, 12);
+            @include s(margin-bottom, 24);
+            @include s(font-size, 14);
+          }
         }
         .socials {
           display: flex;
           flex-direction: column;
           @include s(gap, 6);
           @include s(margin-top, 24);
-
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 12);
+          }
           a {
             display: flex;
             align-items: center;
@@ -118,9 +173,17 @@
             font-weight: 500;
             @include s(font-size, 20);
             line-height: 128%;
+            @media (max-width: $tab-sm) {
+              @include s(gap, 12);
+              @include s(font-size, 16);
+            }
             img {
               @include s(width, 48);
               @include s(height, 48);
+              @media (max-width: $tab-sm) {
+                @include s(width, 28);
+                @include s(height, 28);
+              }
             }
           }
         }
@@ -130,6 +193,10 @@
           font-weight: 500;
           @include s(font-size, 20);
           line-height: 128%;
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 24);
+            @include s(font-size, 16);
+          }
           &:before {
             @include s(left, 76);
           }
@@ -140,8 +207,19 @@
           @include s(letter-spacing, -1);
           line-height: 96%;
           color: var(--white-color);
+          @media (max-width: $tab-sm) {
+            @include s(font-size, 28);
+            line-height: 106%;
+          }
           span {
             color: var(--purple-color);
+          }
+        }
+        .person-wrapper {
+          @media (max-width: $tab-sm) {
+            display: flex;
+            @include s(gap, 24);
+            @include s(margin-top, 20);
           }
         }
         .person {
@@ -151,6 +229,15 @@
           border-radius: 999px;
           object-fit: cover;
           object-position: top;
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 0);
+            @include s(width, 64);
+            @include s(height, 64);
+            @include s(max-width, 64);
+            @include s(max-height, 64);
+            @include s(min-width, 64);
+            @include s(min-height, 64);
+          }
         }
         ul {
           @include s(margin-top, 20);
@@ -158,6 +245,10 @@
           display: flex;
           flex-direction: column;
           @include s(gap, 12);
+          @media (max-width: $tab-sm) {
+            margin-top: 0;
+            @include s(gap, 6);
+          }
           li {
             @include s(padding-left, 48);
             position: relative;
@@ -165,6 +256,10 @@
             font-weight: 500;
             @include s(font-size, 20);
             line-height: 128%;
+            @media (max-width: $tab-sm) {
+              @include s(font-size, 16);
+              @include s(padding-left, 32);
+            }
             &:before {
               content: "";
               background-image: url("../img/icons/check-circle.svg");
@@ -176,6 +271,10 @@
               position: absolute;
               left: 0;
               top: 0;
+              @media (max-width: $tab-sm) {
+                @include s(width, 20);
+                @include s(height, 20);
+              }
             }
           }
         }
@@ -186,7 +285,11 @@
       @include gtc(432, 432, 202, 202);
       @include s(gap, 24);
       @include s(margin-top, 96);
-
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        @include s(gap, 12);
+        @include s(margin-top, 32);
+      }
       .col {
         display: flex;
         flex-direction: column;

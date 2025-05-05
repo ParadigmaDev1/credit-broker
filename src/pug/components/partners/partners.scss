@@ -6,10 +6,19 @@
   z-index: 7;
   position: relative;
   overflow: hidden;
+  @media (max-width: $tab-sm) {
+    @include borr(20, 20, 0, 0);
+    @include s(padding-top, 64);
+    @include s(margin-top, -32);
+  }
   .partners-inner {
     display: grid;
     @include gtc(408, 1fr);
     @include s(gap, 48);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+      @include s(gap, 20);
+    }
     .left-block {
       display: flex;
       flex-direction: column;
@@ -19,16 +28,34 @@
         @include s(font-size, 56);
         @include s(letter-spacing, -1);
         line-height: 96%;
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 28);
+          line-height: 106%;
+        }
       }
       .alert {
         background: var(--back-purple-color);
         @include borr(20);
         @include padding(36);
+        @media (max-width: $tab-sm) {
+          @include padding(20);
+          @include s(margin-top, 20);
+          display: flex;
+          @include s(gap, 16);
+        }
         .image-wrapper {
           @include s(width, 56);
           @include s(height, 56);
           @include borr(12);
           overflow: hidden;
+          @media (max-width: $tab-sm) {
+            @include s(width, 48);
+            @include s(height, 48);
+            @include s(min-width, 48);
+            @include s(max-width, 48);
+            @include s(min-height, 48);
+            @include s(max-height, 48);
+          }
           img {
             width: 100%;
             height: 100%;
@@ -40,6 +67,10 @@
           font-weight: 500;
           @include s(font-size, 20);
           line-height: 128%;
+          @media (max-width: $tab-sm) {
+            margin-top: 0;
+            @include s(font-size, 16);
+          }
         }
       }
     }
@@ -47,6 +78,9 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       @include s(gap, 24);
+      @media (max-width: $tab-sm) {
+        @include s(gap, 4);
+      }
       .image-wrapper {
         border: 1px solid var(--line-color);
         @include borr(20);
@@ -55,6 +89,10 @@
         justify-content: center;
         @include s(height, 128);
         overflow: hidden;
+        @media (max-width: $tab-sm) {
+          @include s(height, 48);
+          @include borr(12);
+        }
         img {
           width: 80%;
           height: 80%;

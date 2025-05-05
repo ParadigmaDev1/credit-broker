@@ -6,12 +6,20 @@
     rgba(241, 243, 248, 1) 0%,
     rgba(233, 233, 255, 1) 100%
   );
+  @media (max-width: $tab-sm) {
+    @include s(padding-top, 64);
+    @include s(padding-bottom, 84);
+  }
   .quiz-inner {
     h3 {
       font-weight: 500;
       @include s(font-size, 56);
       @include s(letter-spacing, -1);
       line-height: 96%;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 28);
+        line-height: 106%;
+      }
       span {
         color: var(--purple-color);
       }
@@ -24,10 +32,19 @@
       display: grid;
       @include gtc(362, 1fr);
       @include s(gap, 46);
+      @media (max-width: $tab-sm) {
+        grid-template-columns: 1fr;
+        gap: 0;
+        @include padding(24);
+        @include s(margin-top, 20);
+      }
       .quiz-form-info {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @media (max-width: $tab-sm) {
+          display: none;
+        }
         .main-info {
           flex: 1;
           .image-wrapper {
@@ -91,6 +108,10 @@
         border-left: 1px solid var(--line-color);
         width: 100%;
         display: none;
+        @media (max-width: $tab-sm) {
+          padding-left: 0;
+          border-left: none;
+        }
         &.active {
           display: block;
         }
@@ -99,6 +120,9 @@
           .input-wrapper {
             @include s(margin-top, 48);
             width: 100%;
+            @media (max-width: $tab-sm) {
+              @include s(margin-top, 28);
+            }
             &:first-child {
               margin-top: 0;
             }
@@ -106,6 +130,9 @@
               font-weight: 500;
               @include s(font-size, 20);
               line-height: 115%;
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 16);
+              }
             }
             .input-container {
               @include borr(12);
@@ -117,6 +144,10 @@
               @include s(margin-top, 16);
               @include s(max-width, 384);
               overflow: hidden;
+              @media (max-width: $tab-sm) {
+                border: none;
+                padding: 0;
+              }
               img {
                 @include s(width, 36);
                 @include s(height, 36);
@@ -138,11 +169,17 @@
                 display: flex;
                 justify-content: space-between;
                 @include s(margin-top, 13);
+                @media (max-width: $tab-sm) {
+                  @include s(margin-top, 9);
+                }
                 p {
                   color: var(--gray-light-color);
                   font-weight: 500;
                   @include s(font-size, 16);
                   line-height: 115%;
+                  @media (max-width: $tab-sm) {
+                    @include s(font-size, 12);
+                  }
                 }
               }
             }
@@ -152,7 +189,11 @@
               @include s(gap, 12);
               width: 100%;
               @include s(margin-top, 20);
-
+              @media (max-width: $tab-sm) {
+                grid-template-columns: 1fr;
+                @include s(gap, 4);
+                @include s(margin-top, 12);
+              }
               label {
                 background: var(--back-purple-color);
                 @include borr(12);
@@ -177,17 +218,27 @@
           @include gtc(384, 1fr);
           @include s(gap, 80);
           @include s(margin-top, 76);
-
+          @media (max-width: $tab-sm) {
+            grid-template-columns: 1fr;
+            @include s(gap, 29);
+            margin-top: 0;
+          }
           .col {
             .title {
               font-weight: 500;
               @include s(font-size, 36);
               line-height: 115%;
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 24);
+              }
             }
             .descr {
               font-weight: 500;
               @include s(font-size, 20);
               line-height: 115%;
+              @media (max-width: $tab-sm) {
+                @include s(font-size, 16);
+              }
             }
             .alert {
               background: var(--back-purple-color);
@@ -197,6 +248,9 @@
               align-items: center;
               @include s(gap, 16);
               @include s(margin-top, 24);
+              @media (max-width: $tab-sm) {
+                @include padding(20, 24);
+              }
               img {
                 @include s(width, 36);
                 @include s(height, 36);
@@ -206,6 +260,9 @@
                 font-weight: 500;
                 @include s(font-size, 32);
                 line-height: 115%;
+                @media (max-width: $tab-sm) {
+                  @include s(font-size, 24);
+                }
               }
             }
             .inputs {
@@ -213,15 +270,32 @@
               display: flex;
               flex-direction: column;
               @include s(gap, 24);
+              @media (max-width: $tab-sm) {
+                @include s(margin-top, 16);
+                @include s(gap, 16);
+              }
             }
             .policy {
               @include s(margin-top, 24);
               font-weight: 500;
               @include s(font-size, 12);
               line-height: 128%;
+              @media (max-width: $tab-sm) {
+                @include s(margin-top, 16);
+              }
               a {
                 color: var(--purple-color);
               }
+            }
+          }
+        }
+        &:last-child {
+          .btns {
+            flex-direction: column-reverse;
+            @include s(gap, 16);
+            align-items: flex-start;
+            .btn {
+              width: 100%;
             }
           }
         }
@@ -230,11 +304,19 @@
           align-items: center;
           justify-content: space-between;
           @include s(margin-top, 70);
-
+          @media (max-width: $tab-sm) {
+            @include s(margin-top, 27);
+          }
           .btn {
             @include s(width, 188);
+            @media (max-width: $tab-sm) {
+              @include s(width, 88);
+            }
             &[type="submit"] {
               @include s(width, 328);
+              @media (max-width: $tab-sm) {
+                width: 100%;
+              }
             }
           }
         }

@@ -2,17 +2,36 @@
   display: flex;
   @include s(gap, 16);
   align-items: center;
+  @media (max-width: $tab-sm) {
+    @include s(gap, 8);
+  }
   img {
     @include s(width, 82);
     @include s(height, 36);
+    @media (max-width: $tab-sm) {
+      @include s(width, 50);
+      @include s(height, 22);
+    }
   }
   .text {
     display: flex;
     flex-direction: column;
     @include s(gap, 1);
     p {
+      font-weight: 500;
+      @include s(font-size, 22);
+      line-height: 106%;
+      @media (max-width: $tab-sm) {
+        @include s(font-size, 14);
+      }
       &:last-child {
         color: var(--purple-color);
+        font-weight: 500;
+        @include s(font-size, 14);
+        line-height: 106%;
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 10);
+        }
       }
     }
   }
