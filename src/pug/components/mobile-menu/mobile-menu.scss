@@ -1,0 +1,122 @@
+.mobile-menu {
+  position: fixed;
+  z-index: 110;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(184, 173, 255, 0.6);
+  backdrop-filter: blur(10px);
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--trs-cubic-300);
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    .mobile-menu-content {
+      transform: translateX(0);
+    }
+  }
+  .close-btn {
+    position: absolute;
+    @include s(top, 20);
+    @include s(right, 20);
+    @include s(width, 48);
+    @include s(height, 48);
+    @include borr(6);
+    padding: 0;
+    // @include s(margin-top, -20);
+    // @include s(margin-right, -20);
+    background: var(--back-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--trs-cubic-300);
+    @media (max-width: $tab-sm) {
+      @include s(margin-right, 0);
+      @include s(top, 20);
+      @include s(right, 20);
+    }
+    &:hover {
+      background: var(--purple-color);
+      svg {
+        path {
+          stroke: var(--white-color);
+        }
+      }
+    }
+    svg {
+      @include s(width, 12);
+      @include s(height, 12);
+    }
+  }
+  .mobile-menu-content {
+    background: var(--white-color);
+    @include borr(0, 20, 20, 0);
+    @include s(width, 272);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include padding(29, 20, 20);
+    transform: translateX(-100%);
+    transition: var(--trs-cubic-300);
+    nav {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      @include s(gap, 6);
+      @include s(margin-top, 28);
+      .btn {
+        text-align: left;
+        @include padding(0, 24);
+      }
+    }
+    .bottom {
+      .address {
+        @include s(padding-left, 20);
+        @include s(font-size, 12);
+        font-weight: 500;
+        line-height: 106%;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          @include s(width, 8);
+          @include s(height, 8);
+          border-radius: 999px;
+          background: var(--purple-color);
+        }
+      }
+      .contacts {
+        @include s(margin-top, 16);
+        display: flex;
+        @include s(gap, 20);
+        .tel {
+          font-weight: 600;
+          @include s(font-size, 18);
+          line-height: 106%;
+        }
+        svg {
+          @include s(width, 17);
+          @include s(height, 17);
+        }
+      }
+      .btn {
+        @include s(height, 40);
+        @include padding(0, 42);
+        font-weight: 500;
+        @include s(font-size, 16);
+        @include s(padding-left, 60);
+        @include s(padding-right, 40);
+        line-height: 115%;
+        @include s(margin-top, 16);
+      }
+    }
+  }
+}

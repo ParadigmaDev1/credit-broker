@@ -150,3 +150,8 @@ svg {
     }
   }
 }
+
+.sticky-block {
+  top: calc(150 / var(--screensize) * 100vw);
+  position: sticky;
+}

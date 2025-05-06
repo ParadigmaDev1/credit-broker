@@ -89,6 +89,10 @@
           outline: none;
           border: none;
           cursor: pointer;
+          display: none;
+          @media (max-width: $tab-sm) {
+            display: flex;
+          }
           span {
             position: absolute;
             width: 100%;
@@ -122,6 +126,10 @@
       }
       .btn {
         width: 100%;
+        &:hover {
+          background: var(--purple-color);
+          color: var(--white-color);
+        }
       }
     }
   }

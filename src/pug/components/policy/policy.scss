@@ -1,0 +1,132 @@
+.policy {
+  @include s(margin-top, 140);
+  @include s(margin-bottom, 96);
+  @media (max-width: $tab-sm) {
+    @include s(margin-top, 56);
+    @include s(margin-bottom, 64);
+  }
+  .policy-inner {
+    display: grid;
+    @include gtc(1fr, 318);
+    @include s(gap, 48);
+    @media (max-width: $tab-sm) {
+      grid-template-columns: 1fr;
+      @include s(gap, 20);
+    }
+    .text {
+      @media (max-width: $tab-sm) {
+        order: 1;
+      }
+      h1 {
+        font-weight: 500;
+        @include s(font-size, 56);
+        @include s(letter-spacing, -1);
+        line-height: 96%;
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 28);
+          line-height: 106%;
+        }
+      }
+      p {
+        font-weight: 500;
+        @include s(font-size, 18);
+        line-height: 148%;
+        @include s(margin-top, 28);
+        @media (max-width: $tab-sm) {
+          @include s(margin-top, 20);
+          @include s(font-size, 16);
+          line-height: 136%;
+        }
+      }
+      h4 {
+        @include s(margin-top, 48);
+        font-weight: 500;
+        @include s(font-size, 28);
+        line-height: 115%;
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 20);
+          line-height: 115%;
+          @include s(margin-top, 28);
+        }
+      }
+      ol {
+        counter-reset: subsection;
+        @include s(margin-top, 16);
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        @include s(gap, 8);
+        li {
+          counter-increment: subsection;
+          font-weight: 500;
+          @include s(font-size, 18);
+          @include s(padding-left, 36);
+          line-height: 148%;
+          position: relative;
+          @media (max-width: $tab-sm) {
+            @include s(font-size, 16);
+            line-height: 115%;
+          }
+          &:before {
+            content: counter(section) "." counter(subsection) " ";
+            color: var(--purple-color);
+            font-weight: 500;
+            @include s(font-size, 18);
+            line-height: 148%;
+            left: 0;
+            position: absolute;
+            @include s(top, 2);
+            @media (max-width: $tab-sm) {
+              @include s(font-size, 16);
+              line-height: 115%;
+            }
+          }
+        }
+      }
+      //   ol {
+      //     @include s(margin-top, 16);
+      //     list-style: none;
+      //     display: flex;
+      //     flex-direction: column;
+      //     @include s(gap, 8);
+      //     li {
+      //       font-weight: 500;
+      //       @include s(font-size, 18);
+      //       line-height: 148%;
+      //     }
+      //   }
+    }
+    .navigation-block {
+      .nav-list {
+        background: var(--back-purple-color);
+        @include borr(20);
+        @include padding(28);
+        display: flex;
+        flex-direction: column;
+        @include s(gap, 16);
+        .link {
+          font-weight: 500;
+          @include s(font-size, 18);
+          line-height: 115%;
+          text-align: left;
+          background: none;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          @include s(gap, 5);
+          display: flex;
+          transition: var(--trs-cubic-300);
+          &.active {
+            color: var(--purple-color);
+          }
+          &:hover {
+            color: var(--purple-color);
+          }
+          span {
+            color: var(--purple-color);
+          }
+        }
+      }
+    }
+  }
+}

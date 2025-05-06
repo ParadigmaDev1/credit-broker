@@ -33,7 +33,8 @@
     @include s(right, 0);
     z-index: 10;
     @media (max-width: $tab-sm) {
-      @include s(top, 34);
+      // @include s(top, 20);
+      // @include s(right, 20);
     }
     .close-modal {
       position: absolute;
@@ -52,8 +53,8 @@
       transition: var(--trs-cubic-300);
       @media (max-width: $tab-sm) {
         @include s(margin-right, 0);
-        @include s(top, -14);
-        @include s(right, 1);
+        @include s(top, 20);
+        @include s(right, 20);
       }
       &:hover {
         background: var(--purple-color);
@@ -99,6 +100,10 @@
         @include s(font-size, 48);
         @include s(letter-spacing, -1);
         line-height: 96%;
+        @media (max-width: $tab-sm) {
+          @include s(font-size, 36);
+          line-height: 106%;
+        }
       }
     }
   }

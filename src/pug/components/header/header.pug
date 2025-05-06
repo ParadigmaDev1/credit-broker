@@ -21,9 +21,9 @@ mixin header()
                         span
                         span
             .header-bottom 
-                button.btn.secondary Обо мне
-                button.btn.secondary Как я работаю
-                button.btn.secondary Истории клиентов
-                button.btn.secondary Калькулятор
-                button.btn.secondary Банки партнёры
-                button.btn.secondary Контакты
+                button.btn.secondary.header-link(data-link='about') Обо мне
+                button.btn.secondary.header-link(data-link='steps')  Как я работаю
+                button.btn.secondary.header-link(data-link='history') Истории клиентов
+                button.btn.secondary.header-link(data-link='quiz')  Калькулятор
+                button.btn.secondary.header-link(data-link='partners') Банки партнёры
+                button.btn.secondary.header-link(data-link='contacts') Контакты

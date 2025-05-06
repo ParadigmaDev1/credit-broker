@@ -1,0 +1,58 @@
+.fixed-menu {
+  position: fixed;
+  @include s(right, 10);
+  @include s(left, 10);
+  @include s(bottom, 10);
+  @include s(gap, 2);
+  z-index: 20;
+  display: none;
+  justify-content: space-between;
+  @media (max-width: $tab-sm) {
+    display: flex;
+  }
+  a.btn {
+    @include padding(0, 19);
+    @include s(height, 44);
+    display: flex;
+    @include s(gap, 10);
+    align-items: center;
+    @include s(font-size, 14);
+    font-weight: 500;
+    line-height: 115%;
+    svg {
+      @include s(width, 16);
+      @include s(height, 16);
+    }
+  }
+
+  .btn.dot {
+    @include s(height, 44);
+    @include s(padding-left, 39);
+    @include s(padding-right, 21);
+    @include s(font-size, 14);
+    font-weight: 500;
+    line-height: 115%;
+    &:before {
+      @include s(left, 21);
+    }
+  }
+  .wa,
+  .tg {
+    @include s(width, 44);
+    @include s(height, 44);
+    @include borr(12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      @include s(width, 17);
+      @include s(height, 17);
+    }
+  }
+  .tg {
+    background: #40b0fa;
+  }
+  .wa {
+    background: #6bd16b;
+  }
+}
