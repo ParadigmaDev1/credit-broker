@@ -14,3 +14,36 @@
     opacity: 1;
   }
 }
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(7deg) rotateY(-7deg);
+  }
+  100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+}
+@keyframes circle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes line {
+  0% {
+    @include s(height, 10);
+  }
+  50% {
+    @include s(height, 60);
+  }
+  100% {
+    @include s(height, 48);
+  }
+}

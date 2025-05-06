@@ -30,6 +30,12 @@
       @include s(font-size, 56);
       @include s(letter-spacing, -1);
       line-height: 96%;
+      transform: translateY(-50%);
+      opacity: 0;
+      &.anim {
+        opacity: 1;
+        transform: translateY(0);
+      }
       @media (max-width: $tab-sm) {
         @include s(font-size, 28);
       }
@@ -74,6 +80,16 @@
           }
           &:first-child {
             background: var(--txt-color);
+            .circles {
+              .circle {
+                // opacity: 0;
+                &:nth-child(-n + 2) {
+                  &.anim {
+                    background: var(--white-color);
+                  }
+                }
+              }
+            }
             &:before {
               border-left-color: var(--txt-color);
               border-top-color: var(--txt-color);
@@ -81,6 +97,13 @@
           }
           &:last-child {
             background: var(--purple-color);
+            .circles {
+              .circle {
+                &:nth-child(-n + 13) {
+                  background: var(--white-color);
+                }
+              }
+            }
             &:before {
               border-left-color: var(--purple-color);
               border-top-color: var(--purple-color);
@@ -96,9 +119,18 @@
               @include s(height, 28);
               border-radius: 999px;
               background: rgba(255, 255, 255, 0.1);
+              // transform: scale(0.8) translateY(-40%);
+              opacity: 0;
+              position: relative;
               @media (max-width: $tab-sm) {
                 @include s(width, 7);
                 @include s(height, 7);
+              }
+
+              &.anim {
+                // transform: scale(1) translateY(0);
+                opacity: 1;
+                animation: circle 1s;
               }
             }
           }
@@ -181,6 +213,12 @@
             padding-bottom: 0;
             border-bottom: none;
           }
+          &.anim {
+            .why-item {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
           .title {
             color: var(--gray-light-color);
             font-weight: 500;
@@ -199,6 +237,9 @@
             @include s(font-size, 18);
             line-height: 148%;
             position: relative;
+            transition: var(--trs-cubic-600);
+            transform: translateY(-30%);
+            opacity: 0;
             @media (max-width: $tab-sm) {
               flex-direction: column;
               padding-left: 0;

@@ -24,6 +24,12 @@
         @include s(font-size, 28);
         line-height: 106%;
       }
+      transform: translateY(-50%);
+      opacity: 0;
+      &.anim {
+        opacity: 1;
+        transform: translateY(0);
+      }
       span {
         color: var(--purple-color);
       }
@@ -47,9 +53,15 @@
         flex-direction: column;
         justify-content: space-between;
         @include s(gap, 30);
+        transform: translateY(-20%);
+        opacity: 0;
         @media (max-width: $tab-sm) {
           @include padding(22, 24);
           @include s(gap, 24);
+        }
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
         }
         .main-content {
           flex: 1;

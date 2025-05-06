@@ -131,9 +131,9 @@ svg {
   @include s(height, 32);
 
   align-items: flex-start !important;
-  display: none;
+  display: none !important;
   @media (max-width: $tab-sm) {
-    display: flex;
+    display: flex !important;
   }
   .swiper-pagination-bullet {
     @include s(height, 16);

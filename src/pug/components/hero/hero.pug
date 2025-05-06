@@ -1,25 +1,27 @@
 mixin hero()
     .hero
         .hero-inner.container
-            .image-block 
+            .image-block(data-anim='anim-obj') 
                 img(src="./img/person.jpg", alt="person")
             .text-block 
-                h1 
+                h1(data-anim='anim-obj') 
                     span Кредитный брокер 
                     | Юлия Зайкина
                 .row 
-                    .image-wrapper 
-                        img(src="./img/hero/img.jpg", alt="img")
+                    .image-container(data-anim='anim-obj')
+                        .image-wrapper 
+                            img(src="./img/hero/bg.jpg", alt="img")
+                            img(src="./img/hero/home.png", alt="img").home
                         .coins 
                             img(src="./img/hero/coin1.png", alt="coin")
                             img(src="./img/hero/coin2.png", alt="coin")
                             img(src="./img/hero/coin3.png", alt="coin")
                     .text 
-                        p.subtitle Помогу получить кредит <br>под залог недвижимости, без предоплаты уже сегодня!
-                        ul 
-                            li Без подтверждения дохода
-                            li С любой кредитной историей
-                            li Получение одобрения за 3 часа
-                            li Оплата услуг только после получения денег
+                        p.subtitle(data-anim='anim-obj')  Помогу получить кредит <br>под залог недвижимости, без предоплаты уже сегодня!
+                        ul(data-anim='anim-arr-obj') 
+                            li(data-anim='anim-item') Без подтверждения дохода
+                            li(data-anim='anim-item') С любой кредитной историей
+                            li(data-anim='anim-item') Получение одобрения за 3 часа
+                            li(data-anim='anim-item') Оплата услуг только после получения денег
                         button.btn.primary.dot(data-modal-target='order-modal') Получить консультацию
 

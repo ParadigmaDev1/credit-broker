@@ -15,6 +15,23 @@
       @include borr(20);
       overflow: hidden;
       @include s(height, 536);
+      position: relative;
+      transition: var(--trs-cubic-600);
+      &::before {
+        content: "";
+        background: var(--white-color);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transition: var(--trs-cubic-600);
+      }
+      &.anim {
+        &:before {
+          transform: translateY(100%);
+        }
+      }
       @media (max-width: $tab-sm) {
         @include s(height, 200);
       }
@@ -31,6 +48,12 @@
         @include s(font-size, 64);
         @include s(letter-spacing, -1);
         line-height: 106%;
+        transform: translateY(-50%);
+        opacity: 0;
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
         @media (max-width: $tab-sm) {
           @include s(font-size, 36);
         }
@@ -48,7 +71,7 @@
           @include s(gap, 0);
           @include s(margin-top, 16);
         }
-        .image-wrapper {
+        .image-container {
           @include borr(20);
           //   overflow: hidden;
           @include s(height, 372);
@@ -56,11 +79,25 @@
           @media (max-width: $tab-sm) {
             display: none;
           }
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            @include borr(20);
+
+          .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              @include borr(20);
+            }
+            .home {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              @include s(width, 192);
+              @include s(width, 200);
+              transition: var(--trs-cubic-600);
+              transform: translateY(70%);
+            }
           }
           .coins {
             img {
@@ -70,28 +107,58 @@
                 @include s(height, 89);
                 @include s(top, 37);
                 @include s(left, 24);
+                transform: translateX(70%) rotate(15deg);
+                opacity: 0;
+                transition: var(--trs-cubic-600);
               }
               &:nth-child(2) {
                 @include s(width, 101);
                 @include s(height, 54);
                 @include s(top, 137);
                 @include s(left, -50);
+                transform: translateX(70%) rotate(45deg);
+                opacity: 0;
+                transition: var(--trs-cubic-600);
               }
               &:nth-child(3) {
                 @include s(width, 76);
                 @include s(height, 84);
                 @include s(top, 68);
                 @include s(left, -50);
+                transform: translateX(70%) rotate(-45deg);
+                opacity: 0;
+                transition: var(--trs-cubic-600);
+              }
+            }
+          }
+          &.anim {
+            .image-wrapper {
+              .home {
+                transform: translate(0);
+              }
+            }
+            .coins {
+              img {
+                opacity: 1;
+                transform: translateX(0) rotate(0);
+                // animation: float 2s linear 0.6s infinite;
               }
             }
           }
         }
+
         .text {
           .subtitle {
             font-weight: 500;
             @include s(font-size, 28);
             line-height: 115%;
             color: var(--purple-color);
+            transform: translateY(-50%);
+            opacity: 0;
+            &.anim {
+              opacity: 1;
+              transform: translateY(0);
+            }
             @media (max-width: $tab-sm) {
               @include s(font-size, 20);
             }
@@ -114,6 +181,12 @@
             font-weight: 500;
             @include s(font-size, 20);
             line-height: 128%;
+            transform: translateY(-50%);
+            opacity: 0;
+            &.anim {
+              opacity: 1;
+              transform: translateY(0);
+            }
             @media (max-width: $tab-sm) {
               @include s(font-size, 16);
               @include s(padding-left, 32);

@@ -31,6 +31,12 @@
           @include s(font-size, 28);
           line-height: 106%;
         }
+        transform: translateY(-50%);
+        opacity: 0;
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       p {
         font-weight: 500;
@@ -40,6 +46,12 @@
         @media (max-width: $tab-sm) {
           @include s(font-size, 16);
           line-height: 128%;
+        }
+        transform: translateY(-50%);
+        opacity: 0;
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
     }
@@ -54,6 +66,14 @@
           background: var(--white-color);
           @include borr(20);
           overflow: hidden;
+          transform: translateY(20%);
+          opacity: 0;
+          transition: opacity var(--trs-cubic-300),
+            transform var(--trs-cubic-300);
+          &.anim {
+            opacity: 1;
+            transform: translateY(0);
+          }
           .top {
             @include padding(48);
             display: flex;

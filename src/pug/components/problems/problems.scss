@@ -31,9 +31,42 @@
         @include s(bottom, 161);
         @include s(right, 66);
       }
+      &.anim {
+        & > img {
+          transform: rotate(0);
+        }
+      }
       & > img {
         z-index: 2;
         position: relative;
+        transform: rotate(10deg);
+        transition: var(--trs-cubic-600);
+        transition-delay: 200ms;
+      }
+      .badges {
+        img {
+          @include s(width, 246);
+          @include s(height, 136);
+          position: absolute;
+          z-index: 3;
+          object-fit: contain;
+          transform: scale(0.6);
+          transition: var(--trs-cubic-300);
+          opacity: 0;
+          &:nth-child(1) {
+            @include s(top, 214);
+            @include s(left, -112);
+          }
+          &:nth-child(2) {
+            @include s(top, 97);
+            @include s(right, -64);
+          }
+          &.anim {
+            transform: scale(1);
+
+            opacity: 1;
+          }
+        }
       }
       .circles {
         position: absolute;
@@ -117,6 +150,12 @@
         @include s(font-size, 56);
         @include s(letter-spacing, -1);
         line-height: 96%;
+        transform: translateY(-50%);
+        opacity: 0;
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
         @media (max-width: $tab-sm) {
           @include s(font-size, 28);
           line-height: 106%;
@@ -175,6 +214,13 @@
         align-items: center;
         @include s(gap, 24);
         height: auto;
+        transition: opacity var(--trs-cubic-600), transform var(--trs-cubic-600) !important;
+        opacity: 0;
+        transform: translateY(-20%);
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
         @media (max-width: $tab-sm) {
           @include padding(24);
         }

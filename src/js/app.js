@@ -10,6 +10,7 @@ import { inputsMask } from "./modules/inputs-mask.js";
 import { range } from "./modules/range.js";
 import { accordionFunc } from "./modules/accordion.js";
 import { modals } from "./modules/modals.js";
+import { anim } from "./modules/anim.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   swiper();
@@ -24,4 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
   modals();
   mobileMenu();
   policy();
+  anim();
 });

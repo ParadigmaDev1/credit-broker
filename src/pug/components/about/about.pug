@@ -2,25 +2,25 @@ mixin about()
     .about.scroll-obj#about
         .about-inner.container 
             .title-wrapper
-                h3 Меня зовут Юлия, я более 10 лет помогаю клиентам
+                h3(data-anim='anim-obj')  Меня зовут Юлия, я более 10 лет помогаю клиентам
                     span , которым банки отказывают.
             .img-alert 
                 img(src="./img/about/alert.jpg", alt="alert")
-            p.descr 
+            p.descr(data-anim='anim-obj') 
                 span Знаю, как работают скоринговые системы, 
                 | на что обращают внимание кредитные отделы, какие нюансы учитывают банки при принятии решений.
             .info 
                 .row 
                     p.value 99,9% 
-                    .lines 
+                    .lines(data-anim='anim-arr-obj')  
                     p.descr Моих клиентов получили желаемый кредит
                 .row 
                     p.value 50%
-                    .lines 
+                    .lines(data-anim='anim-arr-obj')  
                     p.descr Клиентов обращаются повторно или рекомендуют меня
                 .row 
                     p.value >50
-                    .circles 
+                    .circles(data-anim='anim-arr-obj')  
                     p.descr Банков и инвесторов являются моими прямыми партнерами
-            .image-wrapper 
+            .image-wrapper(data-anim='anim-obj') 
                 img(src="./img/person.jpg", alt="person")

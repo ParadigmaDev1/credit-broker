@@ -9,6 +9,7 @@ export const why = () => {
       for (let i = 0; i < 14; i++) {
         const circle = document.createElement("div");
         circle.classList.add("circle");
+        circle.setAttribute("data-anim", "anim-item");
         circlesContainer.appendChild(circle);
       }
     });

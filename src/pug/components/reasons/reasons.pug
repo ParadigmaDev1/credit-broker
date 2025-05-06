@@ -1,32 +1,32 @@
 mixin reasons()
     .reasons
         .reasons-inner.container
-            h3 
+            h3(data-anim='anim-obj') 
                 span 4 причины, 
                 | почему стоит обратиться ко мне
-            .reasons-list 
-                .reason-item 
+            .reasons-list(data-anim='anim-arr-obj')  
+                .reason-item(data-anim='anim-item')
                     .main-content
                         p.title Ставка ниже
                         p.descr для моих клиентов, чем при обращении в банк напрямую
                     .step 
                         p.step 1
                         img(src="./img/icons/check-outline.svg", alt="check") 
-                .reason-item 
+                .reason-item(data-anim='anim-item')
                     .main-content
                         p.title Погашу ваши долги и штрафы
                         p.descr если это влияет на ставку
                     .step 
                         p.step 2
                         img(src="./img/icons/check-outline.svg", alt="check") 
-                .reason-item 
+                .reason-item(data-anim='anim-item')
                     .main-content
                         p.title Покрою расходы на сделку
                         p.descr если это потребуется
                     .step 
                         p.step 3
                         img(src="./img/icons/check-outline.svg", alt="check") 
-                .reason-item 
+                .reason-item(data-anim='anim-item')
                     .main-content
                         p.title Без выписки
                         p.descr Не требую выписываться из недвижимости для оформления сделки

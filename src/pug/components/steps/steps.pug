@@ -2,12 +2,12 @@ mixin steps()
     .steps.scroll-obj#steps
         .steps-inner.container
             .top 
-                h3 Как я добиваюсь одобрения?
-                p Простые шаги —  <br>от заявки до получения кредита
-            .steps-swiper-wrapper 
+                h3(data-anim='anim-obj')  Как я добиваюсь одобрения?
+                p(data-anim='anim-obj')  Простые шаги —  <br>от заявки до получения кредита
+            .steps-swiper-wrapper(data-anim='anim-arr-obj')  
                 .steps-swiper 
                     .swiper-wrapper 
-                        .swiper-slide 
+                        .swiper-slide(data-anim='anim-item')
                             .top 
                                 p.title Готовлю заявку и документы так, чтобы исключить вероятность отказа.
                                 .lines 
@@ -18,7 +18,7 @@ mixin steps()
                                     .line
                             .bottom 
                                 img(src="./img/steps/1.jpg", alt="step")
-                        .swiper-slide 
+                        .swiper-slide(data-anim='anim-item')
                             .top 
                                 p.title Готовлю заявку и документы так, чтобы исключить вероятность отказа.
                                 .lines 
@@ -29,7 +29,7 @@ mixin steps()
                                     .line
                             .bottom 
                                 img(src="./img/steps/2.jpg", alt="step")
-                        .swiper-slide 
+                        .swiper-slide(data-anim='anim-item')
                             .top 
                                 p.title Готовлю заявку и документы так, чтобы исключить вероятность отказа.
                                 .lines 
@@ -40,7 +40,7 @@ mixin steps()
                                     .line
                             .bottom 
                                 img(src="./img/steps/3.jpg", alt="step")
-                        .swiper-slide 
+                        .swiper-slide(data-anim='anim-item')
                             .top 
                                 p.title Готовлю заявку и документы так, чтобы исключить вероятность отказа.
                                 .lines 
@@ -51,7 +51,7 @@ mixin steps()
                                     .line
                             .bottom 
                                 img(src="./img/steps/4.jpg", alt="step")
-                        .swiper-slide 
+                        .swiper-slide(data-anim='anim-item')
                             .top 
                                 p.title Готовлю заявку и документы так, чтобы исключить вероятность отказа.
                                 .lines 

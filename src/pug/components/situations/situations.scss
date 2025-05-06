@@ -16,6 +16,12 @@
       @include s(font-size, 56);
       @include s(letter-spacing, -1);
       line-height: 96%;
+      transform: translateY(-50%);
+      opacity: 0;
+      &.anim {
+        opacity: 1;
+        transform: translateY(0);
+      }
       @media (max-width: $tab-sm) {
         @include s(font-size, 28);
         line-height: 106%;
@@ -40,11 +46,20 @@
         flex-direction: column;
         align-items: center;
         height: 100%;
+        &.anim {
+          & > img {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         & > img {
           @include s(width, 336);
           @include s(height, 356);
           object-fit: cover;
           margin: auto;
+          transform: translateY(50%);
+          transition: var(--trs-cubic-600);
+          opacity: 0;
           @media (max-width: $tab-sm) {
             @include s(width, 206);
             @include s(height, 218);

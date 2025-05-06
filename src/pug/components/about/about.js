@@ -12,6 +12,7 @@ export const about = () => {
           for (let i = 0; i < 8; i++) {
             const circle = document.createElement("div");
             circle.classList.add("circle");
+            circle.setAttribute("data-anim", "anim-item");
             container.appendChild(circle);
           }
         });
@@ -23,6 +24,7 @@ export const about = () => {
           for (let i = 0; i < 39; i++) {
             const line = document.createElement("div");
             line.classList.add("line");
+            line.setAttribute("data-anim", "anim-item");
             container.appendChild(line);
           }
         });

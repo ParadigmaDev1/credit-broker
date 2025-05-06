@@ -1,41 +1,44 @@
 mixin problems()
     .problems
         .problems-inner.container 
-            .image-block 
+            .image-block(data-anim='anim-obj') 
                 img(src="./img/problems/phone.png", alt="phone")
+                .badges(data-anim='anim-arr-obj')  
+                    img(src="./img/problems/1.png", alt="badge" data-anim='anim-item')
+                    img(src="./img/problems/2.png", alt="badge" data-anim='anim-item')
                 .circles 
                     
             .text-block
-                h3 
+                h3(data-anim='anim-obj') 
                     span Вы получите кредит, <br>
                     | даже если у вас есть следующие проблемы:
                 .person 
                     img(src="./img/person.jpg", alt="person")
                     p Сначала я решу ваши проблемы, <br>а мои услуги вы оплатите только после получения денег!
-            .problems-swiper 
+            .problems-swiper(data-anim='anim-arr-obj') 
                 .swiper-wrapper 
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Есть аресты <br>или штрафы в службе <br>судебных приставов
                         img(src="./img/problems/1.svg", alt="problems")
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Есть ошибки в кредитной истории, о которых вы можете не знать
                         img(src="./img/problems/2.svg", alt="problems")
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Ипотека с просрочками <br>или судебными разбирательствами
                         img(src="./img/problems/3.svg", alt="problems")
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Нет официального дохода или он слишком низкий
                         img(src="./img/problems/4.svg", alt="problems")
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Недвижимость уже в залоге
                         img(src="./img/problems/5.svg", alt="problems")
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Уже есть несколько кредитов
                         img(src="./img/problems/6.svg", alt="problems")
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Нет кредитной истории или она испорчена
                         img(src="./img/problems/7.svg", alt="problems")
-                    .swiper-slide 
+                    .swiper-slide(data-anim='anim-item')
                         p Банки отказывают из-за займов в МФО
                         img(src="./img/problems/8.svg", alt="problems")
                 .navigation 
