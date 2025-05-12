@@ -2,13 +2,21 @@ mixin faq()
     .faq
         .faq-inner.container 
             .content 
-                h3 
+                h3(data-anim='anim-obj')  
                     span Отвечаю <br> 
                     | на популярные вопросы
-                .image-wrapper 
-                    img(src="./img/faq/img.jpg", alt="faq")
-            .accordion 
-                .accordion-item 
+                .image-container(data-anim='anim-obj')
+                    .image-wrapper 
+                        img(src="./img/faq/bg.png", alt="img")
+                        img(src="./img/faq/home.png", alt="img").home
+                        img(src="./img/faq/papers.png", alt="img").papers
+                        img(src="./img/faq/clock.png", alt="img").clock
+                    .coins 
+                        img(src="./img/hero/coin1.png", alt="coin")
+                        img(src="./img/hero/coin2.png", alt="coin")
+                        img(src="./img/hero/coin3.png", alt="coin")
+            .accordion(data-anim='anim-arr-obj')  
+                .accordion-item(data-anim='anim-item') 
                     button(type='button').accordion-title 
                         p.title С какими банками вы работаете?
                         .icon 
@@ -17,7 +25,7 @@ mixin faq()
                             </svg>
                     .collapse.accordion-body
                         p Работаю только с официальными банками, никакие «серые схемы» не использую. Подбираю оптимальный вариант под вашу ситуацию.
-                .accordion-item
+                .accordion-item(data-anim='anim-item')
                     button(type='button').accordion-title 
                         p.title Какие документы нужны?
                         .icon 
@@ -26,7 +34,7 @@ mixin faq()
                             </svg>
                     .collapse.accordion-body
                         p Работаю только с официальными банками, никакие «серые схемы» не использую. Подбираю оптимальный вариант под вашу ситуацию.
-                .accordion-item
+                .accordion-item(data-anim='anim-item')
                     button(type='button').accordion-title 
                         p.title Сколько времени занимает одобрение?
                         .icon 
@@ -35,7 +43,7 @@ mixin faq()
                             </svg>
                     .collapse.accordion-body
                         p Работаю только с официальными банками, никакие «серые схемы» не использую. Подбираю оптимальный вариант под вашу ситуацию.
-                .accordion-item
+                .accordion-item(data-anim='anim-item')
                     button(type='button').accordion-title 
                         p.title Почему не подать заявку самому?
                         .icon 
@@ -44,7 +52,7 @@ mixin faq()
                             </svg>
                     .collapse.accordion-body
                         p Работаю только с официальными банками, никакие «серые схемы» не использую. Подбираю оптимальный вариант под вашу ситуацию.
-                .accordion-item
+                .accordion-item(data-anim='anim-item')
                     button(type='button').accordion-title 
                         p.title Сколько стоят услуги кредитного брокера?
                         .icon 

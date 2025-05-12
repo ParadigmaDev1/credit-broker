@@ -1,38 +1,38 @@
 export const anim = () => {
   const svgAnim = document.querySelectorAll(".svg-anim");
 
-  svgAnim.forEach((svg) => {
-    const paths = svg.querySelectorAll(".svg-anim svg path");
-    const circles = svg.querySelectorAll(".svg-anim svg circle");
+  // svgAnim.forEach((svg) => {
+  //   const paths = svg.querySelectorAll(".svg-anim svg path");
+  //   const circles = svg.querySelectorAll(".svg-anim svg circle");
 
-    let observerStandart = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            svg.classList.add("active");
+  //   let observerStandart = new IntersectionObserver(
+  //     (entries, observer) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           svg.classList.add("active");
 
-            anime({
-              targets: paths,
-              duration: 1500,
-              delay: 800,
-              easing: "easeInOutSine",
-              strokeDashoffset: [anime.setDashoffset, 0],
-            });
-            anime({
-              targets: circles,
-              duration: 1500,
-              delay: 800,
-              easing: "easeInOutSine",
-              strokeDashoffset: [anime.setDashoffset, 0],
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-    observerStandart.observe(svg);
-  });
+  //           anime({
+  //             targets: paths,
+  //             duration: 1500,
+  //             delay: 800,
+  //             easing: "easeInOutSine",
+  //             strokeDashoffset: [anime.setDashoffset, 0],
+  //           });
+  //           anime({
+  //             targets: circles,
+  //             duration: 1500,
+  //             delay: 800,
+  //             easing: "easeInOutSine",
+  //             strokeDashoffset: [anime.setDashoffset, 0],
+  //           });
+  //           observer.unobserve(entry.target);
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.25 }
+  //   );
+  //   observerStandart.observe(svg);
+  // });
   const animObjs = document.querySelectorAll("[data-anim='anim-obj']");
   animObjs.forEach((item) => {
     let observerStandart = new IntersectionObserver(

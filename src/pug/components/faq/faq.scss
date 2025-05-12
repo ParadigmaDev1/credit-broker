@@ -19,6 +19,12 @@
         @include s(font-size, 56);
         @include s(letter-spacing, -1);
         line-height: 96%;
+        transform: translateY(-50%);
+        opacity: 0;
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
         @media (max-width: $tab-sm) {
           line-height: 106%;
           @include s(font-size, 28);
@@ -27,19 +33,125 @@
           color: var(--purple-color);
         }
       }
-      .image-wrapper {
+      .image-container {
         @include s(height, 180);
         @include borr(20);
         overflow: hidden;
         @include s(margin-top, 48);
+        position: relative;
         @media (max-width: $tab-sm) {
           @include s(height, 140);
           @include s(margin-top, 20);
         }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+
+        .image-wrapper {
+          position: relative;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include borr(20);
+          }
+          .home {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include s(width, 227);
+            @include s(height, 185);
+            border-radius: 0;
+            transition: var(--trs-cubic-600);
+            transform: translateX(70%);
+            z-index: 2;
+            @media (max-width: $tab-sm) {
+              @include s(width, 181);
+              @include s(height, 145);
+            }
+          }
+          .papers {
+            position: absolute;
+            @include s(width, 236);
+            @include s(height, 108);
+            @include s(right, 136);
+            bottom: 0;
+            transition: var(--trs-cubic-600);
+            transform: translateY(70%);
+            @media (max-width: $tab-sm) {
+              @include s(width, 167);
+              @include s(height, 74);
+            }
+          }
+          .clock {
+            position: absolute;
+            @include s(width, 131);
+            @include s(height, 87);
+            @include s(right, 143);
+            bottom: 0;
+            transition: var(--trs-cubic-600);
+
+            transform: translateX(70%);
+            @media (max-width: $tab-sm) {
+              @include s(width, 100);
+              @include s(height, 69);
+            }
+          }
+        }
+        .coins {
+          img {
+            position: absolute;
+            &:nth-child(1) {
+              @include s(width, 63);
+              @include s(height, 67);
+              @include s(top, 24);
+              @include s(left, 137);
+              transform: translateX(70%) rotate(15deg);
+              opacity: 0;
+              transition: var(--trs-cubic-600);
+              @media (max-width: $tab-sm) {
+                @include s(left, 87);
+              }
+            }
+            &:nth-child(2) {
+              @include s(width, 75);
+              @include s(height, 39);
+              @include s(top, 93);
+              @include s(left, 71);
+              transform: translateX(70%) rotate(45deg);
+              opacity: 0;
+              transition: var(--trs-cubic-600);
+              @media (max-width: $tab-sm) {
+                @include s(left, 30);
+              }
+            }
+            &:nth-child(3) {
+              @include s(width, 57);
+              @include s(height, 64);
+              @include s(top, 43);
+              @include s(left, 77);
+              transform: translateX(70%) rotate(-45deg);
+              opacity: 0;
+              transition: var(--trs-cubic-600);
+              @media (max-width: $tab-sm) {
+                @include s(left, 29);
+              }
+            }
+          }
+        }
+        &.anim {
+          .image-wrapper {
+            .papers,
+            .clock,
+            .home {
+              transform: translate(0);
+            }
+          }
+          .coins {
+            img {
+              opacity: 1;
+              transform: translateX(0) rotate(0);
+              // animation: float 2s linear 0.6s infinite;
+            }
+          }
         }
       }
     }
@@ -48,6 +160,13 @@
       flex-direction: column;
       .accordion-item {
         border-top: 1px solid var(--line-color);
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: var(--trs-cubic-600);
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
         &:last-child {
           border-bottom: 1px solid var(--line-color);
         }

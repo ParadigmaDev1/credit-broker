@@ -28,6 +28,12 @@
         @include s(font-size, 56);
         @include s(letter-spacing, -1);
         line-height: 96%;
+        transform: translateY(-50%);
+        opacity: 0;
+        &.anim {
+          opacity: 1;
+          transform: translateY(0);
+        }
         @media (max-width: $tab-sm) {
           @include s(font-size, 28);
           line-height: 106%;
@@ -89,6 +95,13 @@
         justify-content: center;
         @include s(height, 128);
         overflow: hidden;
+        transition: var(--trs-cubic-600);
+        transform: scale(0);
+        opacity: 0;
+        &.anim {
+          transform: scale(1);
+          opacity: 1;
+        }
         @media (max-width: $tab-sm) {
           @include s(height, 48);
           @include borr(12);

@@ -76,4 +76,80 @@
       }
     }
   }
+  .inner-circle {
+    stroke-dasharray: 500; /* Приблизительная длина пути (можно уточнить через JS) */
+    stroke-dashoffset: 500;
+  }
+  .outer-line {
+    opacity: 0;
+  }
+  .bar {
+    opacity: 0;
+  }
+  .svg-circles {
+    circle {
+      stroke-opacity: 0.2;
+      transition: stroke-opacity 0.8s ease-out;
+    }
+  }
+  &.animate {
+    .inner-circle {
+      animation: draw 3.2s ease-out forwards;
+    }
+
+    /* Анимация для внешних линий */
+    .outer-line {
+      animation: fade-in 0.5s ease-out forwards;
+    }
+    .bar {
+      transform-origin: bottom center;
+      animation: grow 1s ease-out forwards;
+    }
+
+    .svg-circles {
+      /* Изначально все круги полупрозрачные */
+
+      /* Круги, которые должны стать полностью видимыми */
+      circle[stroke-opacity="1"],
+      circle:not([stroke-opacity]) {
+        animation: fade-in-stroke 1s ease-out forwards;
+        animation-delay: 0.5s; /* Задержка перед началом анимации */
+      }
+    }
+  }
+}
+
+/* Ключевые кадры */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-stroke {
+  to {
+    stroke-opacity: 1;
+  }
 }

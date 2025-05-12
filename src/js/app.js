@@ -26,4 +26,29 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileMenu();
   policy();
   anim();
+  const statsBlock = document.querySelector(".stats");
+
+  // Настройки для Intersection Observer
+  const options = {
+    root: null, // используем viewport как область отслеживания
+    rootMargin: "0px",
+    threshold: 0.5, // сработает когда 50% элемента в зоне видимости
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Когда блок появляется в зоне видимости
+        entry.target.classList.add("animate");
+
+        // Опционально: можно отключить наблюдение после первого срабатывания
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  // Начинаем наблюдение
+  if (statsBlock) {
+    observer.observe(statsBlock);
+  }
 });
