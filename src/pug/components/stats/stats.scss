@@ -39,12 +39,14 @@
           flex-direction: column;
           align-items: center;
         }
-        img {
-          @include s(width, 433);
-          @include s(height, 304);
-          @media (max-width: $tab-sm) {
-            @include s(width, 206);
-            @include s(height, 145);
+        .svg-anim {
+          svg {
+            @include s(width, 433);
+            @include s(height, 304);
+            @media (max-width: $tab-sm) {
+              @include s(width, 206);
+              @include s(height, 145);
+            }
           }
         }
         .title {

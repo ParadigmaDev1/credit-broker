@@ -79,6 +79,7 @@
             @media (max-width: $tab-sm) {
               @include s(width, 167);
               @include s(height, 74);
+              @include s(height, 74);
             }
           }
           .clock {

@@ -41,6 +41,13 @@
             color: var(--gray-light-color);
             border-bottom: 1px solid var(--line-color);
           }
+          .btn.primary {
+            @media (max-width: $tab-sm) {
+              &:before {
+                @include s(left, 60);
+              }
+            }
+          }
         }
         &:nth-child(3) {
           background: var(--purple-color);

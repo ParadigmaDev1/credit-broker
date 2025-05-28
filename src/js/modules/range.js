@@ -1,12 +1,11 @@
 export const range = () => {
-  const sliderWrapper = document.querySelectorAll(".slider-wrapper ");
+  const sliderWrapper = document.querySelectorAll(".slider-wrapper");
   if (sliderWrapper.length) {
     sliderWrapper.forEach((wrapper) => {
       const sliderInput = wrapper.querySelector(".slider-input");
-      const sliderTrack = wrapper.querySelector(".slider-track");
+      const raiseInput = wrapper.querySelector(".raise-step");
       const sliderThumb = wrapper.querySelector(".slider-thumb");
       const textInput = wrapper.parentElement.querySelector(".value-input");
-      console.log(textInput);
       const minValue = +sliderInput.min || 0;
       const maxValue = +sliderInput.max || 100;
 
@@ -88,12 +87,29 @@ export const range = () => {
       sliderInput.addEventListener("input", (e) => {
         const rawValue = e.target.value.replace(/[^\d]/g, "");
         const numericValue = parseInt(rawValue || 0);
-
         textInput.value = numericValue.toLocaleString("ru-RU");
 
         sliderInput.value = numericValue;
       });
+      if (raiseInput) {
+        raiseInput.addEventListener("input", (e) => {
+          let value = parseInt(e.target.value, 10) || 0;
 
+          if (value < 12) {
+            value = Math.round(value / 3) * 3;
+            if (value > 12) value = 12; // на случай округления вверх
+          } else {
+            value = Math.round(value / 12) * 12;
+          }
+
+          e.target.value = value;
+          textInput.value = value.toLocaleString("ru-RU");
+
+          // если нужно синхронизировать со sliderInput, добавь:
+          sliderInput.value = value;
+          updateSlider();
+        });
+      }
       textInput.addEventListener("input", (e) => {
         const rawValue = e.target.value.replace(/[^\d]/g, "");
         const numericValue = parseInt(rawValue || 0);
