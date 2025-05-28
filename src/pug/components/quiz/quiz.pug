@@ -8,7 +8,7 @@ mixin quiz()
                 .quiz-form-info 
                     .main-info
                         .image-wrapper 
-                            img(src="./img/person.jpg", alt="quiz")
+                            img(src="./img/person3.jpg", alt="quiz")
                         p.descr Заполните небольшую анкету и вы получите предварительный расчет ежемесячного платежа, а также, я расскажу, какие условия можно получить в вашей ситуации.
                     .progress 
                         .counter
@@ -76,6 +76,9 @@ mixin quiz()
                                     p Коммерческая
                                 label
                                     input(type="radio" name='realty')
+                                    p Другое
+                                label
+                                    input(type="radio" name='realty')
                                     p Нет
                     .btns 
                         button.btn.primary.prev-step(type='button') Назад
@@ -98,7 +101,7 @@ mixin quiz()
                                     input(type="radio" name='credit')
                                     p Не знаю
                         .input-wrapper
-                            p.title Какая у вас недвижимость?
+                            p.title Обращались ли вы в банки за последний месяц
                             .radio-list 
                                 label
                                     input(type="radio" name='bank' checked)
