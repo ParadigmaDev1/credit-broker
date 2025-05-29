@@ -11,6 +11,7 @@ import { range } from "./modules/range.js";
 import { accordionFunc } from "./modules/accordion.js";
 import { modals } from "./modules/modals.js";
 import { anim } from "./modules/anim.js";
+import { fancy } from "./modules/fancy.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   swiper();
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileMenu();
   policy();
   anim();
+  fancy();
   const statsBlock = document.querySelector(".stats");
 
   // Настройки для Intersection Observer
