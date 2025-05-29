@@ -291,11 +291,19 @@
         }
         &:last-child {
           .btns {
-            flex-direction: column-reverse;
+            flex-direction: row;
             @include s(gap, 16);
             align-items: flex-start;
-            .btn {
-              width: 100%;
+            // .btn {
+            //   width: 100%;
+            // }
+
+            @media (max-width: $tab-sm) {
+              flex-direction: column-reverse;
+
+              .btn {
+                width: 100%;
+              }
             }
           }
         }
